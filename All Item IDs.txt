@@ -1,0 +1,34 @@
+===== Regular items =====
+Money, BaconCheeseburger, Banana, Beer, FirstAidKit, HamSandwich, Whiskey, Cigarettes, Cocaine (Sugar), Steroids (Muscly Pill),
+BraceletStrength, BulletproofVest, Codpiece, FireproofSuit, GasMask, SoldierHelmet, HardHat, BananaPeel, Rock, CigaretteLighter,
+Crowbar, OilContainer, HackingTool, ItemTeleporter, Key (???), Lockpick, MiniFridge, SafeCombination, SafeCrackingTool, Translator,
+Wrench, AccuracyMod, Silencer, FireExtinguisher, Flamethrower, FreezeRay, LeafBlower, MachineGun, Pistol, RocketLauncher, Shotgun,
+WaterPistol, Axe, BaseballBat, Knife, PoliceBaton, Sledgehammer, Sword, Grenade, GrenadeEMP, GrenadeDizzy, LandMine, MolotovCocktail,
+RagePoison, SkeletonKey, ResurrectionShampoo, TimeBomb, QuickEscapeTeleporter, WindowCutter, TranquilizerGun, FoodProcessor,
+AmmoProcessor, Boombox, WallBypasser, HearingBlocker, SlaveHelmetRemover, ArmorDurabilityDoubler, MeleeDurabilityDoubler, CritterUpper,
+ElectroPill, Giantizer, FourLeafClover, Hypnotizer, Hypnotizer2, Haterator, FreeItemVoucher, KillProfiter, KillerThrower, CubeOfLampey,
+AmmoStealer, SafeBuster, Cologne, Shrinker, ShrinkRay, DoorDetonator, FriendPhone, BearTrap, CardboardBox, IdentifyWand, DrinkMixer,
+PortableSellOMatic, Shuriken, Necronomicon, HiringVoucher, CyanidePill, KillProfiterAmmo (Kill Ammunizer), KillProfiterHealth (Kill
+Healthenizer), Blindenizer, ParalyzerTrap, Fud, Taser, MayorHat, MayorBadge, HotFud, MayorEvidence, MonkeyBarrel, AmmoCapacityMod,
+RateOfFireMod, BodySwapper, ExplosiveStimulator, Fireworks, WalkieTalkie, MemoryEraser, GrenadeWarp, BloodBag, Antidote, BooUrn,
+Revolver, BombMaker
+
+===== Items-abilities =====
+Laptop, ChloroformHankie, StealingGlove, WaterCannon, LaserGun
+
+===== Unavailable Items =====
+Syringe (random effect), SlaveHelmet, Fist, SlaveHelmetRemote, CircuitBoard, HardDrive, Tooth, Will, Blueprints, Evidence,
+IncriminatingPhoto, SignedBaseball, MacguffinMuffin, Briefcase, BigBomb, Cocktail (random effect), Depossessor (Possession Stone),
+BearTrapPark (Bear trap from Park), ResearchGun, BodyguardTether (Electro Tether Vest), DeliveryApp, CourierPackage,
+CourierPackageBroken, BombTrigger (Remote Bomb Trigger), RemoteBomb, MechTransformItem (Mech Key)
+
+===== Unimplemented working Items =====
+BalletShoes, Shovel, Teleporter, Chainsaw, FlamingSword, GrenadeKnocker, WarpZoner, PropertyDeed, LaserBlazer, FiveLeafClover,
+SixLeafClover, PowerDrill, PlasmaSword, RubberBulletsMod
+
+===== Unimplemented not working Items =====
+Flask, GrapplingHook, KeyCard, MagicLamp, MindReaderDevice, Jackhammer, BFG, GuidedMissileLauncher, SniperRifle, Blowtorch,
+KnockerMelee, StickyMine, TripMine, BodyVanisher, ForceField
+
+===== Removed Items =====
+MoodRing, VoodooDoll

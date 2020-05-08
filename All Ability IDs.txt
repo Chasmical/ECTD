@@ -1,0 +1,9 @@
+===== Regular Abilities =====
+Lunge, Handcuffs, Charge, Bite, Joke, InvisibleLimitedItem, Possess, Toss, WerewolfTransform, Cannibalize, Enslave, ZombieSpit, PowerSap,
+Stomp, MindControl, LaserGun, MechTransform
+
+===== Item Abilities (can also be used as items) =====
+Laptop, ChloroformHankie, StealingGlove, WaterCannon, LaserGun
+
+===== Unavailable Abilities =====
+TutorialAbility (Cry Profusely), WerewolfLunge (Sharp Lunge)

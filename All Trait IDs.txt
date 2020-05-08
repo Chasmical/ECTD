@@ -1,0 +1,64 @@
+===== Regular Traits =====
+Backstabber, BananaLover[2], BigBullets, BigMelee, BloodyMess, CantSpeakEnglish (Vocally Challenged), CantUseGuns (Stubby Fingers),
+CantUseWeapons (Pacifist), CantUseWeapons2 (Sausage Fingers), DontTriggerFloorHazards (Graceful), FastMelee[2], GoodThrower,
+GoodTrader[2], BadTrader, IdentifyScience (Drug-a-lug), IncreasedCritChance[2], IgnoreLasers, HatesGorilla, HatesScientist,
+InvisibleToCameras (Camera Shy), KnockbackLess[2] (Tank-like/Unstoppable-ish), KnockbackMore (Skinny Nerdlinger), Likeable[2]
+(Charismatic [+]), Unlikeable (Malodorous), LowcostJobs[2], MedicalProfessional, MoreFollowers (Team Building Expert), NoFollowers
+(Antisocial), RegenerateHealthWhenLow[2] (Modern Warfarer [+]), SleepKiller, StatusEffectsLonger[2], StatusEffectsShorter, StrongLunge,
+TechExpert, NoTechSkill, TheLaw, Loud, MoreKnockingThroughWalls[2] (Walls' Worst Nightmare [+]), StrongFists[2] (Knuckley [+]),
+StartWithFollowers[2] (Loneliness Killer [+]), NoOwnCheckOnBreak (Clumsiness Forgiven), GenericAgentsAligned (Friend of the Common
+Folk), LongLunge[2], FastLunge, HardToShoot[2] (Slippery Target [+]), DontHitAligned (No In-Fighting), BloodRestoresHealth
+(Jugularious), ServeDrinks, ArtOfTheDeal, Diminutive, Naked (Wanted), Suspicious, MeleeMobility[2] (Floats Like Butterfly [+]),
+MeleeLastLonger[2] (Durabilitacious [+]), MapFilled (G-P-Yesss), OperateQuickly (Nimble Fingers), MoreSkillPoints[2] (Studious/Super
+Studious), MoreTraitChoices[2] (Jack of Extra Trades [+]), FastWhenHealthLow[2] (I'm Outtie [+]), MoreDamageWhenHealthLow[2] (Don't Make
+Me Angry [+]), ScareEnemiesEasier[2] (Disturbing Facial Expressions [+]), FollowersExtraHealth[2] (Infectious Spirit [+]),
+ChanceToSlowEnemies[2] (Kneecapper [+]), NoStealPenalty (Promise I'll Return It!), HardToSeeFromDistance[2] (Blends In Nicely [+]),
+ChanceToKnockWeapons (Butterfinger-er), Bloodlust[2], IncreaseStatEvery2Levels (Potential to Not Suck), CanBorrowMoney (Moocher),
+Zombify (Zombiism), ZombieArmy (Army of Five), EveryoneHatesZombie (Fair Game), Wanted, KnockWeapons (Ultimate
+Butterfinger-er), DestructionXP (Master of Disaster), CannibalizeRestoresHealth (Strict Cannibal), RandomPeopleSecretHate (Ideological
+Clash), DontHitOwnKind (Class Solidarity), FleshFeast[2], HatesBlahds, HatesCrepes, ResistBulletsTrait[2] (Bullet Sponge [+]),
+HonorAmongThieves[2], ChanceAttacksDoZeroDamage[2] (Un-Crits [+]), AttacksDamageAttacker[2] (Prickly Skin [+]), CauseBiggerKnockback
+(Knockback King), BlocksSometimesHit[2] (Block Breaker [+]), MeleeHoldDeflectsBullets[2] (Block Bullets [+]), MeleeDestroysWalls[2]
+(Wall Walloper [+]), ExplosionsDontDamageCauser (Blaster Survivor), ExplosionsBreakEverything (Blaster Master),
+MoreAmmoInDroppedWeapons[2] (Ammo Scavenger [+]), ReloadWeaponsNewLevel[2] (Lock and Load [+]), BulletsCauseFire (Burning Bullets),
+BulletsPassThroughObjects (Penetrating Bullets), BulletsDestroyOtherBullets (Bullet Breaker), OperateSecretly (Sneaky Fingers),
+TeleportAnytime (Teleport-Happy), HitObjectsNoNoise (Secret Vandalizer), ThiefToolsMayNotSubtract[2] (Intrusion Artist [+]),
+RandomPeopleAligned[2] (Random Reverence [+]), MoreFollowersLessDamageToPlayer[2] (Safe in Crowds [+]), MoreFollowersCauseMoreDamage[2]
+(Confident in Crowds [+]), AgentsFollowToNextLevel (Homesickness Killer), HealthItemsGiveFollowersExtraHealth[2] (Share the Health [+]),
+CannibalsNeutral (Cool with Cannibals), MafiaAligned (Friend of the Family), ChanceFreeShopItem[2] (On the House [+]),
+MoneyAtLevelStart[2] (Trust Funder [+]), VendorsDropShopItem[2] (Shop Drops [+]), FireproofSkin[2], FightsFires (Scorching Savior),
+FireExtinguishXP (Inferno Assailant), MustPayCops (Corruption Costs), Rechargeable[2], Electronic, Bodyguard, RollerSkates[2],
+OwnersNotHostile (Wrong Building), AttacksOneDamage (Near-Harmless)
+
+===== Special Ability Upgrades =====
+BumpsDontEndCamouflage (Slinky), FailedAttacksDontEndCamouflage (Vicious Chameleon), StandingStillCausesCamouflage (Cardboard Box-Like),
+FasterCharge (Sprinter), ChargeMorePowerful (Tackler), ChargeNoTrip (Low Center of Gravity), ChargeNoHealthLoss (Juggernaut),
+CannibalizeFaster (Fast Food), CannibalizeMoreHealth (Savorer), CannibalizeNoAnnoy (Table Manners), JokesNeverCauseHate (Eggshell
+Walker), JokesMoreSuccessful/JokesAlwaysSuccessful (Feature Act [+]), LessArrestXPLoss/NoArrestXPLoss (Crooked [+]), FasterLunge
+(Impatient Lunge), HackImmediate (Speed Coder), HackingMakesNoSound (Foolproof Hacks), HacksBlowUpObjects (Cyber Nuke),
+PossessShorterCooldown (Body-Swapper), NoDepossessHealthLoss (No Harm in Dying), NoPossessHate (Possessions are Peachy Keen),
+SlavesDontMutiny (Benevolent Owner), BiggerSlaveHelmetExplosions (Destructive Deaths), LegalEnslavement, SlavesFightForYou (Steadfast
+Slaves), AgentsDontSeePickpocket (Covert Crook), PickpocketMoreMoney (Deeper Pockets), BiteFaster (Chipmunk Teeth), BiteGainMoreHealth
+(Vein Tapper), BiteNoAnnoy (They're Just Kissing), BiteFullHealth (Bottomless Stomach), WerewolfLastLonger (Killing Time),
+WerewolfShorterCooldown (Restless Beast), WerewolfNoDizzy (Steady Head), HigherWerewolfSpeed (Swift Wolf), HigherWerewolfDamage (Rip and
+Tear), FasterZombieSpitCharge (Swift Spitter), NoZombieSpitHealthLoss (Throat of Iron), NoChloroformCooldown (Subduing Spree),
+TranqDartsWorkFaster (Quick Tranq), ZombiesFaster (Quick and Dead), ZombiesStronger (Inhuman Strength), StrongerWaterCannon (Riot
+Cannon), ChallengeAnyoneToFight (Honorable Challenges), ResearchGunStatusEffects (Research Gun Radiation), Shakedowner[2] (Extortionist
+[+]), Mugger[2], MoreHealthFromPowerSap (Sappy-Healthy), MoreDamagePowerSap (Sap Damage), StompLessDamage (Safe Stomp),
+StompDamagesAgents (Aftershocked), BiggerStompRadius (Good Vibrations), MusicianTakesLessHealth (Blood of Steel),
+MoreMoneyFromDeliveries (Surging), MoreTimeForDeliveries (Leisurely Ride), LowerCostRemoteBombs (Bomb Baker), BigRemoteBombExplosions
+(Big Bang), NPCsDontNoticeRemoteBombs (Sneaky Bomber), LaserMorePowerful (Power Lasers), LaserGunChargesFaster (Blazing Lasers),
+OilRestoresMoreHealth (Oil Less Essential), BiggerMindControlRadius (Groupies), MindControlledDamageMore (Puppet Power),
+MindControlledResistDamage (Thick-Skinned Pawn), MindControlledWalkThroughWalls (Power Walkers)
+
+===== Unavailable Traits =====
+CantInteract (Pea-Brained), WerewolfAwareness (Werewolf A-Were-ness), UpperCrusty, CantAttack (Harmless), BigCollider (Bulky),
+OilRestoresHealth (Oil Reliant), CantTeleport (No Teleports), CopsDontCare, MechHateTrait (Scumbag Slaughterer), FindMoreGuns
+
+===== Unimplemented Traits =====
+InvisiblePermanent, HighCostJobs, NumbToPain, LessDamageAligned, SuperchargeHealth, OperateSlowly (Poor Hand-Eye Coordination),
+EnemiesDieWhenFleeing (Heart-Stopper), BuffFromMultipleKills (Rampager), BulletKnockouts (Rubber Bullets)
+
+===== Status Effects that can be used as Traits =====
+AboveTheLaw, Accurate, KillerThrower, ResistDamageSmall, ResistDamageMed, ResistDamageLarge, ResistBullets, ResistBulletsSmall,
+ResistFire, ResistGas, Frozen, Confused, Dizzy/DizzyB
