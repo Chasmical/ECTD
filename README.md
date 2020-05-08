@@ -1,3 +1,11 @@
+## Links ##
+
+* [Download ECTD](https://drive.google.com/open?id=1nSlGht67Cm1lCCs4ikWb_OSO8jOiw_To)
+
+* [ECTD at GitHub](https://github.com/Abbysssal/ECTD/tree/master)
+
+* [ECTD at GitHub ('ru' branch)](https://github.com/Abbysssal/ECTD/tree/ru)
+
 ## ECTD (Edit Characters Through Description) ##
 #### Game version: v89i2<br/>Mod version: v2.1<br/>Created by: Abbysssal#2020 ####
 
