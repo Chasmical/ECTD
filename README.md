@@ -43,14 +43,14 @@ After saving the character, a text will appear in the description, describing th
 
 * `++<Item ID>` - adds an item with the specified ID to the custom character;
 <br/>Examples: `++Grenade`, `++PlasmaSword`, `++Hypnotizer2`;
-<br/>See [All Item IDs.txt](https://drive.google.com/open?id=1QVCLH_p9EFE-_m6HZuSdUMgxGA71COVM);
+<br/>See [All Item IDs.txt](https://github.com/Abbysssal/ECTD/blob/master/All%20Item%20IDs.txt);
 
 * `--<Item ID>` - removes an item with the specified ID from the custom character;
 <br/>Examples: `--Grenade`, `--PlasmaSword`, `--Hypnotizer2`;
 
 * `**<Trait ID>` - adds a trait with the specified ID to the custom character;
 <br/>Examples: `**UpperCrusty`, `**BananaLover2`, `**ReloadWeaponsNewLevel`;
-<br/>See [All Trait IDs.txt](https://drive.google.com/open?id=1Gxexndf5TEScS3hhF1DtAz_UIj6LXfTy);
+<br/>See [All Trait IDs.txt](https://github.com/Abbysssal/ECTD/blob/master/All%20Trait%20IDs.txt);
 
 * `//<Trait ID>` - removes a trait with the specified ID from the custom character;
 <br/>Examples: `//UpperCrusty`, `//BananaLover2`, `//ReloadWeaponsNewLevel`;
@@ -69,7 +69,7 @@ After saving the character, a text will appear in the description, describing th
 
 * `%%<Ability ID>` - sets the custom character's special ability;
 <br/>Examples: `%%Charge`, `%%WerewolfLunge`, `%%MindControl`;
-<br/>See [All Ability IDs.txt](https://drive.google.com/open?id=14ZPbSVxyBsqGRjiRbfZVDXruVYwsnUYy);
+<br/>See [All Ability IDs.txt](https://github.com/Abbysssal/ECTD/blob/master/All%20Ability%20IDs.txt);
 
 * `!!items` - lists all item IDs that were added to the custom character;
 
