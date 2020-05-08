@@ -3,8 +3,7 @@
 
 Have you ever wanted to create an interesting custom character, but the in-game editor didn't have all items or traits that you needed? Well, now you can! This mod allows you to add unavailable items, traits and abilities to your custom characters.
 
-Also this mod adds one mutator "ECTD-RocketBullets" - All bullets and projectiles are replaced by rockets. *Works on both players and NPCs.*
-Here's a short video about this mutator: https://www.youtube.com/watch?v=XBQcWCL9fwo
+Also this mod adds one mutator "ECTD-RocketBullets" - All bullets and projectiles are replaced by rockets. *Works on both players and NPCs.* Here's a short video about this mutator: https://www.youtube.com/watch?v=XBQcWCL9fwo
 
 ## Installation ##
 1.  Drag the file "Assembly-CSharp.dll" into the directory /Steam/SteamApps/common/Streets of Rogue/StreetsOfRogue_Data/Managed/ (Replace if needed);
@@ -25,7 +24,7 @@ You need to type 'description commands' in your custom character's description, 
 %%WerewolfLunge
 ^^Speed=-2
 ```
-After that, a text will appear in your custom character's description, describing the changes that were made:
+After saving the character, a text will appear in the description, describing the changes that were made:
 ```
 [ITEM 'PlasmaSword' ADDED]
 [STAT 'Strength' SET TO '228']
@@ -110,4 +109,4 @@ You can select new mutators at Home Base!
 * Added `^<Stat>=<Value>` description command;
 
 #### ECTD v1.0 (also known as Any Items Mod): ####
-* Added `+<Item>` description command;
+* Added `+<Item>` description command.
