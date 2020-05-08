@@ -1,6 +1,6 @@
 ## Links ##
 
-* [Download ECTD](https://drive.google.com/open?id=1nSlGht67Cm1lCCs4ikWb_OSO8jOiw_To)
+* [Download ECTD](https://github.com/Abbysssal/ECTD/releases)
 
 * [ECTD at GitHub](https://github.com/Abbysssal/ECTD)
 
