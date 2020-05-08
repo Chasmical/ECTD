@@ -43,14 +43,14 @@
 
 * `++<ID предмета>` - добавляет предмет с указанным ID кастомному персонажу;
 <br/>Примеры: `++Grenade`, `++PlasmaSword`, `++Hypnotizer2`;
-<br/>ID предметов смотрите тут - [All Item IDs.txt](https://drive.google.com/open?id=1QVCLH_p9EFE-_m6HZuSdUMgxGA71COVM);
+<br/>ID предметов смотрите тут - [All Item IDs.txt](https://github.com/Abbysssal/ECTD/blob/master/All%20Item%20IDs.txt);
 
 * `--<ID предмета>` - убирает предмет с указанным ID у кастомного персонажа;
 <br/>Примеры: `--Grenade`, `--PlasmaSword`, `--Hypnotizer2`;
 
 * `**<ID особенности>` - добавляет особенность с указанным ID кастомному персонажу;
 <br/>Примеры: `**UpperCrusty`, `**BananaLover2`, `**ReloadWeaponsNewLevel`;
-<br/>ID особенностей смотрите тут - [All Trait IDs.txt](https://drive.google.com/open?id=1Gxexndf5TEScS3hhF1DtAz_UIj6LXfTy);
+<br/>ID особенностей смотрите тут - [All Trait IDs.txt](https://github.com/Abbysssal/ECTD/blob/master/All%20Trait%20IDs.txt);
 
 * `//<ID особенности>` - убирает особенность с указанным ID у кастомного персонажа;
 <br/>Примеры: `//UpperCrusty`, `//BananaLover2`, `//ReloadWeaponsNewLevel`;
@@ -69,7 +69,7 @@
 
 * `%%<ID способности>` - изменяет специальную способность кастомного персонажа;
 <br/>Примеры: `%%Charge`, `%%WerewolfLunge`, `%%MindControl`;
-<br/>ID способностей смотрите тут - [All Ability IDs.txt](https://drive.google.com/open?id=14ZPbSVxyBsqGRjiRbfZVDXruVYwsnUYy);
+<br/>ID способностей смотрите тут - [All Ability IDs.txt](https://github.com/Abbysssal/ECTD/blob/master/All%20Ability%20IDs.txt);
 
 * `!!items` - показывает список ID всех добавленных предметов у кастомного персонажа;
 
