@@ -2,9 +2,7 @@
 
 * [Скачать ECTD](https://drive.google.com/open?id=1nSlGht67Cm1lCCs4ikWb_OSO8jOiw_To)
 
-* [ECTD на GitHub](https://github.com/Abbysssal/ECTD/tree/ru)
-
-* [ECTD на GitHub ('master' branch)](https://github.com/Abbysssal/ECTD/tree/master)
+* [ECTD на GitHub](https://github.com/Abbysssal/ECTD)
 
 ## ECTD (Edit Characters Through Description) ##
 #### Версия игры: v89i2<br/>Версия мода: v2.1<br/>Автор мода: Abbysssal#2020 ####
