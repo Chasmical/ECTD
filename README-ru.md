@@ -1,7 +1,5 @@
 ## Ссылки ##
-
 * [Скачать ECTD](https://github.com/Abbysssal/ECTD/releases)
-
 * [ECTD на GitHub](https://github.com/Abbysssal/ECTD)
 
 ## ECTD (Edit Characters Through Description) ##
@@ -79,6 +77,20 @@
 Вы можете выбрать новые мутаторы на Базе!
 
 * ECTD-RocketBullets - заменяет все пули и снаряды на ракеты. Да настанет настоящий хаос!
+
+## Characters created using ECTD ##
+Когда вы публикуете своих персонажей в Мастерскую Стима, можете использовать эту заготовку:
+```
+[b]This character requires ECTD to work![/b]
+[b]You can find the latest release here:[/b]
+[b]https://github.com/Abbysssal/ECTD/releases[/b]
+
+[b]Для работы этого персонажа нужен мод ECTD![/b]
+[b]Скачать свежий релиз мода можно здесь:[/b]
+[b]https://github.com/Abbysssal/ECTD/releases[/b]
+```
+
+* [Cyborg](https://steamcommunity.com/sharedfiles/filedetails/?id=2092648215) [(Qenapp)](https://steamcommunity.com/id/Qenapp)
 
 ## Список изменений ##
 
