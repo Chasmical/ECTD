@@ -3,14 +3,14 @@
 * [ECTD на GitHub](https://github.com/Abbysssal/ECTD)
 
 ## Содержание ##
-1.	[Что такое ECTD?]()
-2.	[Установка]()
-3.	[Деинсталляция]()
-4.	[Как пользоваться ECTD?]()
-5.	[Список команд]()
-6.	[Новые мутаторы]()
-7.	[Персонажи, созданные с ECTD]()
-8.	[Список изменений]()
+1.	[Что такое ECTD?](https://github.com/Abbysssal/ECTD/blob/master/README-ru.md#ectd-edit-characters-through-description)
+2.	[Установка](https://github.com/Abbysssal/ECTD/blob/master/README-ru.md#установка)
+3.	[Деинсталляция](https://github.com/Abbysssal/ECTD/blob/master/README-ru.md#деинсталляция-это-также-уберёт-всю-кастомную-локализацию)
+4.	[Как пользоваться ECTD?](https://github.com/Abbysssal/ECTD/blob/master/README-ru.md#как-добавлять-предметыособенности)
+5.	[Список команд](https://github.com/Abbysssal/ECTD/blob/master/README-ru.md#список-команд)
+6.	[Новые мутаторы](https://github.com/Abbysssal/ECTD/blob/master/README-ru.md#новые-мутаторы)
+7.	[Персонажи, созданные с ECTD](https://github.com/Abbysssal/ECTD/blob/master/README-ru.md#персонажи-созданные-с-ectd)
+8.	[Список изменений](https://github.com/Abbysssal/ECTD/blob/master/README-ru.md#список-изменений)
 
 ## ECTD (Edit Characters Through Description) ##
 #### Версия игры: v89j2<br/>Версия мода: v2.1.1<br/>Автор мода: Abbysssal#2020 ####
