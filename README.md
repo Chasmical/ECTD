@@ -1,3 +1,15 @@
+## Contents ##
+1.	[Contents](https://github.com/Abbysssal/ECTD/blob/master/README.md#contents)
+2.	[Links](https://github.com/Abbysssal/ECTD/blob/master/README.md#links)
+3.	[What is ECTD?](https://github.com/Abbysssal/ECTD/blob/master/README.md#ectd-edit-characters-through-description)
+4.	[Installation](https://github.com/Abbysssal/ECTD/blob/master/README.md#installation)
+5.	[Deinstallation](https://github.com/Abbysssal/ECTD/blob/master/README.md#deintallation-this-will-also-remove-any-custom-localizations)
+6.	[How to add items/traits?](https://github.com/Abbysssal/ECTD/blob/master/README.md#how-to-add-itemstraits)
+7.	['Description Commands'](https://github.com/Abbysssal/ECTD/blob/master/README.md#description-commands)
+8.	[New Mutators](https://github.com/Abbysssal/ECTD/blob/master/README.md#new-mutators)
+9.	[Characters created using ECTD](https://github.com/Abbysssal/ECTD/blob/master/README.md#characters-created-using-ectd)
+10.	[Changelog](https://github.com/Abbysssal/ECTD/blob/master/README.md#changelog)
+
 ## Links ##
 * [Download ECTD](https://github.com/Abbysssal/ECTD/releases)
 * [ECTD at GitHub](https://github.com/Abbysssal/ECTD)
@@ -77,6 +89,10 @@ After saving the character, a text will appear in the description, describing th
 You can select new mutators at Home Base!
 
 * ECTD-RocketBullets - all bullets and projectiles are replaced by rockets. Let the TRUE chaos begin!
+
+## Characters created using ECTD ##
+
+* [Cyborg](https://steamcommunity.com/sharedfiles/filedetails/?id=2092648215) by [Qenapp](https://steamcommunity.com/id/Qenapp)
 
 ## Changelog ##
 
