@@ -1,7 +1,16 @@
+## Contents ##
+* [Contents](https://github.com/Abbysssal/ECTD#contents)
+* [Links](https://github.com/Abbysssal/ECTD#links)
+* [ECTD (Edit Characters Through Description)](https://github.com/Abbysssal/ECTD#ectd-edit-characters-through-description)
+* [Installation](https://github.com/Abbysssal/ECTD#installation)
+* [Deinstallation](https://github.com/Abbysssal/ECTD#deintallation-this-will-also-remove-any-custom-localizations)
+* [How to add items/traits?](https://github.com/Abbysssal/ECTD#how-to-add-itemstraits)
+* ['Description Commands'](https://github.com/Abbysssal/ECTD#description-commands)
+* [New Mutators](https://github.com/Abbysssal/ECTD#new-mutators)
+* [Changelog](https://github.com/Abbysssal/ECTD#changelog)
+
 ## Links ##
-
 * [Download ECTD](https://github.com/Abbysssal/ECTD/releases)
-
 * [ECTD at GitHub](https://github.com/Abbysssal/ECTD)
 
 ## ECTD (Edit Characters Through Description) ##
@@ -75,7 +84,7 @@ After saving the character, a text will appear in the description, describing th
 
 * `!!traits` - lists all trait IDs that were added to the custom character;
 
-## New mutators ##
+## New Mutators ##
 You can select new mutators at Home Base!
 
 * ECTD-RocketBullets - all bullets and projectiles are replaced by rockets. Let the TRUE chaos begin!
