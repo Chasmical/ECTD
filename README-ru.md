@@ -1,6 +1,7 @@
 ## Ссылки ##
 * [Скачать ECTD](https://github.com/Abbysssal/ECTD/releases)
 * [ECTD на GitHub](https://github.com/Abbysssal/ECTD)
+* [Руководство в Стиме (англ.)](https://steamcommunity.com/sharedfiles/filedetails/?id=2093706214)
 
 ## Содержание ##
 1.	[Что такое ECTD?](https://github.com/Abbysssal/ECTD/blob/master/README-ru.md#ectd-edit-characters-through-description)
@@ -20,14 +21,14 @@
 А ещё, этот мод добавляет один мутатор "ECTD-RocketBullets" - Все пули и снаряды заменяются на ракеты. *Работает и на игроках, и на НПС.* Вот небольшое видео про этот мутатор: https://www.youtube.com/watch?v=XBQcWCL9fwo
 
 ## Установка ##
-1.  Перенесите файл "Assembly-CSharp.dll" в папку /Steam/SteamApps/common/Streets of Rogue/StreetsOfRogue_Data/Managed/ (Заменить по необходимости);
-2.  Готово. Запускайте игру и наслаждайтесь!
+1.	[Скачайте свежий релиз ECTD](https://github.com/Abbysssal/ECTD/releases);
+2.  Перенесите файл "Assembly-CSharp.dll" из архива в папку /Steam/SteamApps/common/Streets of Rogue/StreetsOfRogue_Data/Managed/ (Заменить по необходимости);
+3.  Готово. Запускайте игру и наслаждайтесь!
 
 ## Деинсталляция (Это также уберёт всю кастомную локализацию!) ##
-1.  Нажмите правой кнопкой мыши по Streets of Rogue в Steam;
-2.  Выберите "Свойства";
-3.  Выберите категорию "Локальные файлы";
-4.  Нажмите "Проверить целостность файлов игры".
+1.  Нажмите правой кнопкой мыши по Streets of Rogue в Steam и выберите "Свойства";
+2.  Выберите категорию "Локальные файлы";
+3.  Нажмите "Проверить целостность файлов игры".
 
 ## Как добавлять предметы/особенности? ##
 Вам нужно ввести специальные команды в описании вашего кастомного персонажа:
@@ -46,6 +47,8 @@
 [ABILITY 'WerewolfLunge' ADDED]
 [STAT 'Speed' SET TO '-2']
 ```
+
+Просмотрите [гайд в Стиме](https://steamcommunity.com/sharedfiles/filedetails/?id=2093706214), там побольше информации.
 
 ## Список команд ##
 

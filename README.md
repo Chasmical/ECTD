@@ -1,6 +1,7 @@
 ## Links ##
 * [Download ECTD](https://github.com/Abbysssal/ECTD/releases)
 * [ECTD at GitHub](https://github.com/Abbysssal/ECTD)
+* [Steam guide](https://steamcommunity.com/sharedfiles/filedetails/?id=2093706214)
 
 ## Contents ##
 1.	[What is ECTD?](https://github.com/Abbysssal/ECTD#ectd-edit-characters-through-description)
@@ -20,14 +21,14 @@ Have you ever wanted to create an interesting custom character, but the in-game 
 Also this mod adds one mutator "ECTD-RocketBullets" - All bullets and projectiles are replaced by rockets. *Works on both players and NPCs.* Here's a short video about this mutator: https://www.youtube.com/watch?v=XBQcWCL9fwo
 
 ## Installation ##
-1.  Drag the file "Assembly-CSharp.dll" into the directory /Steam/SteamApps/common/Streets of Rogue/StreetsOfRogue_Data/Managed/ (Replace if needed);
+1.	[Download the latest release of ECTD](https://github.com/Abbysssal/ECTD/releases);
+1.  Drag the file "Assembly-CSharp.dll" from the archive into the directory /Steam/SteamApps/common/Streets of Rogue/StreetsOfRogue_Data/Managed/ (Replace if needed);
 2.  Done! Now run the game and enjoy!
 
 ## Deintallation (This will also remove any custom localizations!) ##
-1.  Right-Click on Streets of Rogue in Steam;
-2.  Select "Properties";
-3.  Choose category "Local files";
-4.  Press "Verify integrity of game files".
+1.  Right-Click on Streets of Rogue in Steam and select "Properties";
+2.  Choose category "Local files";
+3.  Press "Verify integrity of game files".
 
 ## How to add items/traits? ##
 You need to type 'description commands' in your custom character's description, like so:
@@ -46,6 +47,8 @@ After saving the character, a text will appear in the description, describing th
 [ABILITY 'WerewolfLunge' ADDED]
 [STAT 'Speed' SET TO '-2']
 ```
+
+See the [guide in Steam](https://steamcommunity.com/sharedfiles/filedetails/?id=2093706214) for more information.
 
 ## 'Description Commands' ##
 
