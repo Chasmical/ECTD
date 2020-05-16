@@ -100,12 +100,13 @@ You can select new mutators at Home Base!
 ## Characters created using ECTD ##
 When you're publishing your custom characters, you can use this template on Steam Workshop:
 ```
-[b]This character requires ECTD to work![/b]
-[b]You can find the latest release here:[/b]
-[b]https://github.com/Abbysssal/ECTD/releases[/b]
+[b]This character requires ECTD to work!
+You can find the latest release here:
+https://github.com/Abbysssal/ECTD/releases[/b]
 ```
 
 * [Cyborg](https://steamcommunity.com/sharedfiles/filedetails/?id=2092648215) by [Qenapp](https://steamcommunity.com/id/Qenapp)
+* [Visible Man](https://steamcommunity.com/sharedfiles/filedetails/?id=2098168599) by [Abbysssal](https://steamcommunity.com/id/Abbysssal/)
 
 ## Changelog ##
 

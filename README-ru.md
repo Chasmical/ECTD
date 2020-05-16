@@ -100,16 +100,17 @@
 ## Персонажи, созданные с ECTD ##
 Когда вы публикуете своих персонажей в Мастерскую Стима, можете использовать эти заготовки:
 ```
-[b]This character requires ECTD to work![/b]
-[b]You can find the latest release here:[/b]
-[b]https://github.com/Abbysssal/ECTD/releases[/b]
+[b]This character requires ECTD to work!
+You can find the latest release here:
+https://github.com/Abbysssal/ECTD/releases[/b]
 
-[b]Для работы этого персонажа нужен мод ECTD![/b]
-[b]Скачать свежий релиз мода можно здесь:[/b]
-[b]https://github.com/Abbysssal/ECTD/releases[/b]
+[b]Для работы этого персонажа нужен мод ECTD!
+Скачать свежий релиз мода можно здесь:
+https://github.com/Abbysssal/ECTD/releases[/b]
 ```
 
 * [Cyborg](https://steamcommunity.com/sharedfiles/filedetails/?id=2092648215) [(Qenapp)](https://steamcommunity.com/id/Qenapp)
+* [Visible Man](https://steamcommunity.com/sharedfiles/filedetails/?id=2098168599) [(Abbysssal)](https://steamcommunity.com/id/Abbysssal/)
 
 ## Список изменений ##
 
