@@ -1,0 +1,15 @@
+===== Default Colors =====
+WhiteSkin, PinkSkin, PaleSkin, SuperPaleSkin, MixedSkin, GoldSkin, LightBlackSkin, BlackSkin, GorillaSkin, RobotSkin, RobotPlayerSkin, CopBotSkin, ButlerBotSkin, AlienSkin, WerewolfSkin, MechSkin, ZombieSkin1, ZombieSkin2, ZombieSkin3, ZombieSkin4, White, Black, Grey, Brown, Blonde, Orange, Red, Green, Blue, Purple, Pink, Yellow
+
+===== Extra Colors (ECTD required) =====
+Clear (0,0,0,0)
+
+===== Custom Color Formats (ECTD required) =====
+R
+R,G
+R,G,B
+R,G,B,A
+
+If the value is not defined, then it's set to default - 255.
+
+Value separators: '-', '.', '|', ':', '_', ',', ';'.

@@ -14,7 +14,7 @@
 8.	[Changelog](https://github.com/Abbysssal/ECTD#changelog)
 
 ## ECTD (Edit Characters Through Description) ##
-#### Game version: v89j2<br/>Mod version: v2.1.1<br/>Created by: Abbysssal#2020 ####
+#### Game version: v89k<br/>Mod version: v2.1.1<br/>Created by: Abbysssal#2020 ####
 
 Have you ever wanted to create an interesting custom character, but the in-game editor didn't have all items or traits that you needed? Well, now you can! This mod allows you to add unavailable items, traits and abilities to your custom characters.
 
@@ -85,6 +85,10 @@ See the [guide in Steam](https://steamcommunity.com/sharedfiles/filedetails/?id=
 * `!!items` - lists all item IDs that were added to the custom character;
 
 * `!!traits` - lists all trait IDs that were added to the custom character;
+
+* `::Skin|Hair|Legs|Body|Eyes=<Color>` - sets the custom character's skin/hair/legs/body/eyes color to the specified color;
+<br/>Examples: `::Skin=Purple`, `::Eyes=RobotSkin`, `::Hair=255|12|86|220`, `::Body=23-62`, `::Legs=255,0,255,127`;
+<br/>See [All Color IDs.txt](https://github.com/Abbysssal/ECTD/blob/master/All%20Color%20IDs.txt);
 
 ## New Mutators ##
 You can select new mutators at Home Base!
