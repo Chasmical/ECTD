@@ -86,6 +86,8 @@ See the [guide in Steam](https://steamcommunity.com/sharedfiles/filedetails/?id=
 
 * `!!traits` - lists all trait IDs that were added to the custom character;
 
+* `::Skin|Hair|Legs|Body|Eyes` - gets the custom character's skin/hair/legs/body/eyes color;
+
 * `::Skin|Hair|Legs|Body|Eyes=<Color>` - sets the custom character's skin/hair/legs/body/eyes color to the specified color;
 <br/>Examples: `::Skin=Purple`, `::Eyes=RobotSkin`, `::Hair=255|12|86|220`, `::Body=23-62`, `::Legs=255,0,255,127`;
 <br/>See [All Color IDs.txt](https://github.com/Abbysssal/ECTD/blob/master/All%20Color%20IDs.txt);
@@ -106,6 +108,10 @@ When you're publishing your custom characters, you can use this template on Stea
 * [Cyborg](https://steamcommunity.com/sharedfiles/filedetails/?id=2092648215) by [Qenapp](https://steamcommunity.com/id/Qenapp)
 
 ## Changelog ##
+
+#### ECTD v2.2: ####
+* Added `::<Part>` to get body part's color;
+* Added `::<Part>=<Color>` to set body part's color (+ custom colors);
 
 #### ECTD v2.1.1: ####
 * With "ECTD-RocketBullets" enabled, Shotgun will shoot 3 rockets instead of 1;

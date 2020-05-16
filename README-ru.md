@@ -86,6 +86,8 @@
 
 * `!!traits` - показывает список ID всех добавленных особенностей у кастомного персонажа;
 
+* `::Skin|Hair|Legs|Body|Eyes` - получает цвет кожи/волос/ног/тела/глаз у кастомного персонажа;
+
 * `::Skin|Hair|Legs|Body|Eyes=<Цвет>` - изменяет цвет кожи/волос/ног/тела/глаз у кастомного персонажа на заданный цвет;
 <br/>Примеры: `::Skin=Purple`, `::Eyes=RobotSkin`, `::Hair=255|12|86|220`, `::Body=23-62`, `::Legs=255,0,255,127`;
 <br/>ID цветов смотрите тут - [All Color IDs.txt](https://github.com/Abbysssal/ECTD/blob/master/All%20Color%20IDs.txt);
@@ -110,6 +112,10 @@
 * [Cyborg](https://steamcommunity.com/sharedfiles/filedetails/?id=2092648215) [(Qenapp)](https://steamcommunity.com/id/Qenapp)
 
 ## Список изменений ##
+
+#### ECTD v2.2: ####
+* Добавил `::<Part>` для получения цвета части тела;
+* Добавил `::<Part>=<Color>` для установки цвета части тела (+ кастомные цвета);
 
 #### ECTD v2.1.1: ####
 * Со включенным "ECTD-RocketBullets", Дробовик будет стрелять 3 ракеты вместо 1;
