@@ -1,5 +1,7 @@
 ===== Default Colors =====
-WhiteSkin, PinkSkin, PaleSkin, SuperPaleSkin, MixedSkin, GoldSkin, LightBlackSkin, BlackSkin, GorillaSkin, RobotSkin, RobotPlayerSkin, CopBotSkin, ButlerBotSkin, AlienSkin, WerewolfSkin, MechSkin, ZombieSkin1, ZombieSkin2, ZombieSkin3, ZombieSkin4, White, Black, Grey, Brown, Blonde, Orange, Red, Green, Blue, Purple, Pink, Yellow
+WhiteSkin, PinkSkin, PaleSkin, SuperPaleSkin, MixedSkin, GoldSkin, LightBlackSkin, BlackSkin, GorillaSkin, RobotSkin, RobotPlayerSkin,
+CopBotSkin, ButlerBotSkin, AlienSkin, WerewolfSkin, MechSkin, ZombieSkin1, ZombieSkin2, ZombieSkin3, ZombieSkin4, White, Black, Grey,
+Brown, Blonde, Orange, Red, Green, Blue, Purple, Pink, Yellow
 
 ===== Extra Colors (ECTD required) =====
 Clear (0,0,0,0)
