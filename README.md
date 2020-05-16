@@ -14,7 +14,7 @@
 8.	[Changelog](https://github.com/Abbysssal/ECTD#changelog)
 
 ## ECTD (Edit Characters Through Description) ##
-#### Game version: v89k<br/>Mod version: v2.1.1<br/>Created by: Abbysssal#2020 ####
+#### Game version: v89k<br/>Mod version: v2.2<br/>Created by: Abbysssal#2020 ####
 
 Have you ever wanted to create an interesting custom character, but the in-game editor didn't have all items or traits that you needed? Well, now you can! This mod allows you to add unavailable items, traits and abilities to your custom characters.
 
