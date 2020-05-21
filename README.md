@@ -22,9 +22,9 @@ Also this mod adds one mutator "ECTD-RocketBullets" - All bullets and projectile
 
 ## Installation ##
 1.	Install BepInEx:
-    1.  [Download the latest version of BepInEx](https://github.com/BepInEx/BepInEx/releases);
-    2.  Drag all files from the archive into directory /Steam/SteamApps/common/Streets of Rogue/;
-    3. Run the game, so BepInEx can create needed files and directories, and close the game;
+		1.	[Download the latest version of BepInEx](https://github.com/BepInEx/BepInEx/releases);
+		2.	Drag all files from the archive into directory /Steam/SteamApps/common/Streets of Rogue/;
+		3.	Run the game, so BepInEx can create needed files and directories, and close the game;
 2.	[Download the latest version of ECTD](https://github.com/Abbysssal/ECTD/releases);
 3.  Drag the file "ECTD.dll" from the archive into directory /Steam/SteamApps/common/Streets of Rogue/BepInEx/plugins;
 4.  Done! Now run the game and enjoy!
