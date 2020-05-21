@@ -14,18 +14,30 @@
 8.	[Список изменений](https://github.com/Abbysssal/ECTD/blob/master/README-ru.md#список-изменений)
 
 ## ECTD (Edit Characters Through Description) ##
-#### Версия игры: v89k<br/>Версия мода: v2.2<br/>Автор мода: Abbysssal#2020 ####
+#### Версия игры: v89k<br/>Версия мода: v2.3<br/>Автор мода: Abbysssal#2020 ####
 
 Вы когда-нибудь хотели создать интересного кастомного персонажа, но во внутриигровом редакторе не было всех предметов и особенностей, которые вам были нужны? Вообщем, этот мод позволяет вам добавлять недоступные в редакторе предметы, особенности и способности вашим кастомным персонажам!
 
 А ещё, этот мод добавляет один мутатор "ECTD-RocketBullets" - Все пули и снаряды заменяются на ракеты. *Работает и на игроках, и на НПС.* Вот небольшое видео про этот мутатор: https://www.youtube.com/watch?v=XBQcWCL9fwo
 
 ## Установка ##
-1.	[Скачайте свежий релиз ECTD](https://github.com/Abbysssal/ECTD/releases);
+1.	Установите BepInEx:
+1.1.	[Скачайте свежую версию BepInEx](https://github.com/BepInEx/BepInEx/releases);
+1.2.	Перенесите файлы из архива в папку /Steam/SteamApps/common/Streets of Rogue/;
+1.3.	Запустите игру, чтобы BepInEx создал нужные файлы и папки, и выйдите из игры;
+2.	[Скачайте свежую версию ECTD](https://github.com/Abbysssal/ECTD/releases);
+3.	Перенесите файл "ECTD.dll" из архива в папку /Steam/SteamApps/common/Streets of Rogue/BepInEx/plugins;
+4.	Готово. Запускайте игру и наслаждайтесь!
+
+#### Установка для v2.2 и старее ####
+1.	[Скачайте свежую версию ECTD](https://github.com/Abbysssal/ECTD/releases);
 2.  Перенесите файл "Assembly-CSharp.dll" из архива в папку /Steam/SteamApps/common/Streets of Rogue/StreetsOfRogue_Data/Managed/ (Заменить по необходимости);
 3.  Готово. Запускайте игру и наслаждайтесь!
 
-## Деинсталляция (Это также уберёт всю кастомную локализацию!) ##
+## Деинсталляция ##
+1.	Просто уберите файл "ECTD.dll" из папки/Steam/SteamApps/common/Streets of Rogue/BepInEx/plugins.
+
+#### Деинсталляция для v2.2 и старее ####
 1.  Нажмите правой кнопкой мыши по Streets of Rogue в Steam и выберите "Свойства";
 2.  Выберите категорию "Локальные файлы";
 3.  Нажмите "Проверить целостность файлов игры".
@@ -113,6 +125,11 @@ https://github.com/Abbysssal/ECTD/releases[/b]
 * [Visible Man](https://steamcommunity.com/sharedfiles/filedetails/?id=2098168599) [(Abbysssal)](https://steamcommunity.com/id/Abbysssal/)
 
 ## Список изменений ##
+
+#### ECTD v2.3 ####
+* Портировал мод на BepInEx. Теперь не придётся постоянно обновлять мод на мелкие багфиксы;
+* Теперь "ECTD-RocketBullets" работает на снаряды, выпущенные ловушками;
+* Если команда удаления предмета или особенности не найдёт указанный ID, команда не будет выполнена;
 
 #### ECTD v2.2: ####
 * Добавил `::<Part>` для получения цвета части тела;

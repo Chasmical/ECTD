@@ -14,18 +14,30 @@
 8.	[Changelog](https://github.com/Abbysssal/ECTD#changelog)
 
 ## ECTD (Edit Characters Through Description) ##
-#### Game version: v89k<br/>Mod version: v2.2<br/>Created by: Abbysssal#2020 ####
+#### Game version: v89k<br/>Mod version: v2.3<br/>Created by: Abbysssal#2020 ####
 
 Have you ever wanted to create an interesting custom character, but the in-game editor didn't have all items or traits that you needed? Well, now you can! This mod allows you to add unavailable items, traits and abilities to your custom characters.
 
 Also this mod adds one mutator "ECTD-RocketBullets" - All bullets and projectiles are replaced by rockets. *Works on both players and NPCs.* Here's a short video about this mutator: https://www.youtube.com/watch?v=XBQcWCL9fwo
 
 ## Installation ##
-1.	[Download the latest release of ECTD](https://github.com/Abbysssal/ECTD/releases);
-1.  Drag the file "Assembly-CSharp.dll" from the archive into the directory /Steam/SteamApps/common/Streets of Rogue/StreetsOfRogue_Data/Managed/ (Replace if needed);
+1.	Install BepInEx:
+1.1.	[Download the latest version of BepInEx](https://github.com/BepInEx/BepInEx/releases);
+1.2.	Drag all files from the archive into directory /Steam/SteamApps/common/Streets of Rogue/;
+1.3.	Run the game, so BepInEx can create needed files and directories, and close the game;
+2.	[Download the latest version of ECTD](https://github.com/Abbysssal/ECTD/releases);
+3.  Drag the file "ECTD.dll" from the archive into directory /Steam/SteamApps/common/Streets of Rogue/BepInEx/plugins;
+4.  Done! Now run the game and enjoy!
+
+#### Installation for v2.2 and older ####
+1.	[Download the latest version of ECTD](https://github.com/Abbysssal/ECTD/releases);
+1.  Drag the file "Assembly-CSharp.dll" from the archive into directory /Steam/SteamApps/common/Streets of Rogue/StreetsOfRogue_Data/Managed/ (Replace if needed);
 2.  Done! Now run the game and enjoy!
 
-## Deintallation (This will also remove any custom localizations!) ##
+## Deinstallation ##
+1.	Just remove ECTD.dll from /Steam/SteamApps/common/Streets of Rogue/BepInEx/plugins.
+
+#### Deintallation for v2.2 and older ####
 1.  Right-Click on Streets of Rogue in Steam and select "Properties";
 2.  Choose category "Local files";
 3.  Press "Verify integrity of game files".
@@ -109,6 +121,11 @@ https://github.com/Abbysssal/ECTD/releases[/b]
 * [Visible Man](https://steamcommunity.com/sharedfiles/filedetails/?id=2098168599) by [Abbysssal](https://steamcommunity.com/id/Abbysssal/)
 
 ## Changelog ##
+
+#### ECTD v2.3 ####
+* Ported the mod to BepInEx. Now I don't have to update the mod for every single bugfix;
+* "ECTD-RocketBullets" now works on projectiles, shot by traps;
+* If the item or trait removal command can't find the specified ID, the command won't be executed;
 
 #### ECTD v2.2: ####
 * Added `::<Part>` to get body part's color;
