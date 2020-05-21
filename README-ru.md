@@ -22,9 +22,9 @@
 
 ## Установка ##
 1.	Установите BepInEx:
-		1.	[Скачайте свежую версию BepInEx](https://github.com/BepInEx/BepInEx/releases);
-		2.	Перенесите файлы из архива в папку /Steam/SteamApps/common/Streets of Rogue/;
-		3.	Запустите игру, чтобы BepInEx создал нужные файлы и папки, и выйдите из игры;
+    1.	[Скачайте свежую версию BepInEx](https://github.com/BepInEx/BepInEx/releases);
+    2.	Перенесите файлы из архива в папку /Steam/SteamApps/common/Streets of Rogue/;
+    3.	Запустите игру, чтобы BepInEx создал нужные файлы и папки, и выйдите из игры;
 2.	[Скачайте свежую версию ECTD](https://github.com/Abbysssal/ECTD/releases);
 3.	Перенесите файл "ECTD.dll" из архива в папку /Steam/SteamApps/common/Streets of Rogue/BepInEx/plugins;
 4.	Готово. Запускайте игру и наслаждайтесь!
