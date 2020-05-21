@@ -14,11 +14,16 @@
 8.	[Список изменений](https://github.com/Abbysssal/ECTD/blob/master/README-ru.md#список-изменений)
 
 ## ECTD (Edit Characters Through Description) ##
-#### Версия мода: v2.3<br/>Автор мода: Abbysssal#2020 ####
+#### Версия игры: v89 и новее<br/>Версия мода: v2.3<br/>Автор мода: Abbysssal#2020 ####
 
-Вы когда-нибудь хотели создать интересного кастомного персонажа, но во внутриигровом редакторе не было всех предметов и особенностей, которые вам были нужны? Вообщем, этот мод позволяет вам добавлять недоступные в редакторе предметы, особенности и способности вашим кастомным персонажам!
+**С ECTD вы можете:**
+*	Изменять значения характеристик в диапазоне ±2147483647;
+*	Добавлять любые предметы, например Гранаты или Плазменный Меч;
+*	Добавлять любые особенности, в том числе и улучшения;
+*	Ставить любые способности, например Рывок Вервольфа;
+*	Изменять цвета частей тела (+ кастомные цвета R,G,B,A);
 
-А ещё, этот мод добавляет один мутатор "ECTD-RocketBullets" - Все пули и снаряды заменяются на ракеты. *Работает и на игроках, и на НПС.* Вот небольшое видео про этот мутатор: https://www.youtube.com/watch?v=XBQcWCL9fwo
+*	*Плюс, новый мутатор "ECTD-RocketBullets", заменяющий все снаряды на ракеты;*
 
 ## Установка ##
 1.	Установите BepInEx:
@@ -121,8 +126,8 @@ https://github.com/Abbysssal/ECTD/releases[/b]
 https://github.com/Abbysssal/ECTD/releases[/b]
 ```
 
-* [Cyborg](https://steamcommunity.com/sharedfiles/filedetails/?id=2092648215) [(Qenapp)](https://steamcommunity.com/id/Qenapp)
-* [Visible Man](https://steamcommunity.com/sharedfiles/filedetails/?id=2098168599) [(Abbysssal)](https://steamcommunity.com/id/Abbysssal/)
+* [Киборг](https://steamcommunity.com/sharedfiles/filedetails/?id=2092648215) и [Джедай](https://steamcommunity.com/sharedfiles/filedetails/?id=2098216250) [(Qenapp)](https://steamcommunity.com/id/Qenapp)
+* [Видимый человек](https://steamcommunity.com/sharedfiles/filedetails/?id=2098168599) [(Abbysssal)](https://steamcommunity.com/id/Abbysssal/)
 
 ## Список изменений ##
 

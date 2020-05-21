@@ -14,11 +14,16 @@
 8.	[Changelog](https://github.com/Abbysssal/ECTD#changelog)
 
 ## ECTD (Edit Characters Through Description) ##
-#### Mod version: v2.3<br/>Created by: Abbysssal#2020 ####
+#### Game version: v89 and later<br/>Mod version: v2.3<br/>Created by: Abbysssal#2020 ####
 
-Have you ever wanted to create an interesting custom character, but the in-game editor didn't have all items or traits that you needed? Well, now you can! This mod allows you to add unavailable items, traits and abilities to your custom characters.
+**With ECTD you can:**
+*	Set Strength/Endurance/Accuracy/Speed to any value in range ±2147483647;
+*	Add any items, like Grenades, Plasma Sword or Laser Blazer;
+*	Add any traits, ability upgrades and upgraded traits;
+*	Set unavailable abilities, for example WerewolfLunge or TutorialAbility;
+*	Set colors of body parts (+ custom colors R,G,B,A);
 
-Also this mod adds one mutator "ECTD-RocketBullets" - All bullets and projectiles are replaced by rockets. *Works on both players and NPCs.* Here's a short video about this mutator: https://www.youtube.com/watch?v=XBQcWCL9fwo
+*	*Plus, a new mutator "ECTD-RocketBullets" that replaces all projectiles by rockets;*
 
 ## Installation ##
 1.	Install BepInEx:
@@ -35,7 +40,7 @@ Also this mod adds one mutator "ECTD-RocketBullets" - All bullets and projectile
 2.  Done! Now run the game and enjoy!
 
 ## Deinstallation ##
-1.	Just remove ECTD.dll from /Steam/SteamApps/common/Streets of Rogue/BepInEx/plugins.
+1.	Just remove "ECTD.dll" from /Steam/SteamApps/common/Streets of Rogue/BepInEx/plugins.
 
 #### Deintallation for v2.2 and older ####
 1.  Right-Click on Streets of Rogue in Steam and select "Properties";
@@ -117,7 +122,7 @@ You can find the latest release here:
 https://github.com/Abbysssal/ECTD/releases[/b]
 ```
 
-* [Cyborg](https://steamcommunity.com/sharedfiles/filedetails/?id=2092648215) by [Qenapp](https://steamcommunity.com/id/Qenapp)
+* [Cyborg](https://steamcommunity.com/sharedfiles/filedetails/?id=2092648215) and [Jedi](https://steamcommunity.com/sharedfiles/filedetails/?id=2098216250) by [Qenapp](https://steamcommunity.com/id/Qenapp)
 * [Visible Man](https://steamcommunity.com/sharedfiles/filedetails/?id=2098168599) by [Abbysssal](https://steamcommunity.com/id/Abbysssal/)
 
 ## Changelog ##
