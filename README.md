@@ -6,7 +6,7 @@
 ## Contents ##
 1.	[What is ECTD?](https://github.com/Abbysssal/ECTD#ectd-edit-characters-through-description)
 2.	[Installation](https://github.com/Abbysssal/ECTD#installation)
-3.	[Deinstallation](https://github.com/Abbysssal/ECTD#deintallation-this-will-also-remove-any-custom-localizations)
+3.	[Deinstallation](https://github.com/Abbysssal/ECTD#deintallation)
 4.	[How to use ECTD?](https://github.com/Abbysssal/ECTD#how-to-add-itemstraits)
 5.	['Description Commands'](https://github.com/Abbysssal/ECTD#description-commands)
 6.	[New Mutators](https://github.com/Abbysssal/ECTD#new-mutators)
@@ -14,7 +14,7 @@
 8.	[Changelog](https://github.com/Abbysssal/ECTD#changelog)
 
 ## ECTD (Edit Characters Through Description) ##
-#### Game version: v89 and later<br/>Mod version: v2.3<br/>Created by: Abbysssal#2020 ####
+#### Game version: v89 and later<br/>Mod version: v2.4<br/>Created by: Abbysssal#2020 ####
 
 **With ECTD you can:**
 *	Set Strength/Endurance/Accuracy/Speed to any value in range ±2147483647;
@@ -22,8 +22,7 @@
 *	Add any traits, ability upgrades and upgraded traits;
 *	Set unavailable abilities, for example WerewolfLunge or TutorialAbility;
 *	Set colors of body parts (+ custom colors R,G,B,A);
-
-*	*Plus, a new mutator "ECTD-RocketBullets" that replaces all projectiles by rockets;*
+*	Use new mutators, added by this mod;
 
 ## Installation ##
 1.	Install BepInEx:
@@ -112,7 +111,11 @@ See the [guide in Steam](https://steamcommunity.com/sharedfiles/filedetails/?id=
 ## New Mutators ##
 You can select new mutators at Home Base!
 
-* ECTD-RocketBullets - all bullets and projectiles are replaced by rockets. Let the TRUE chaos begin!
+* **[ECTD] Rocket Bullets** - Replaces absolutely all projectiles by rockets. Rate of fire is unchanged.
+* **[ECTD] No Limit Nuggets** - If enabled, allows you to get more than 99 nuggets. If disabled, does NOT reset the nuggets amount.
+* **[ECTD] One Hit Player** - Getting even the tiniest amount of damage will result in your death.
+* **[ECTD] Giant Explosions** - Makes all explosions twice as big.
+* **[ECTD] Super Speed** - Everything in-game happens twice as fast.
 
 ## Characters created using ECTD ##
 When you're publishing your custom characters, you can use this template on Steam Workshop:
@@ -126,6 +129,12 @@ https://github.com/Abbysssal/ECTD/releases[/b]
 * [Visible Man](https://steamcommunity.com/sharedfiles/filedetails/?id=2098168599) by [Abbysssal](https://steamcommunity.com/id/Abbysssal/)
 
 ## Changelog ##
+
+#### ECTD v2.4 ####
+* Added new mutator "ECTD-NoLimitNuggets";
+* Added new mutator "ECTD-OneHitPlayer";
+* Added new mutator "ECTD-GiantExplosions";
+* Added new mutator "ECTD-SuperSpeed";
 
 #### ECTD v2.3 ####
 * Ported the mod to BepInEx. Now I don't have to update the mod for every single bugfix;
