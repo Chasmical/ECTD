@@ -121,8 +121,8 @@ https://github.com/Abbysssal/ECTD/releases[/b]
 * Removed mutators "ECTD-OneHitPlayer" and "ECTD-SuperSpeed", because they are very buggy;
 * Added chat commands!;
 * "!help" lists all available commands;
-* "!item <ItemID> [Amount]" spawns the item at cursor's position;
-* "!agent <AgentID>" or "!npc <AgentID>" spawns the agent at cursor's position;
+* "!item \<ItemID\> [Amount]" spawns the item at cursor's position;
+* "!agent \<AgentID\>" or "!npc \<AgentID\>" spawns the agent at cursor's position;
 * Fixed a bug, when ECTD didn't recognize item IDs with '-' and other symbols;
 
 #### ECTD v2.4.1 ####
