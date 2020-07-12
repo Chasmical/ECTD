@@ -101,11 +101,7 @@ See the [guide in Steam](https://steamcommunity.com/sharedfiles/filedetails/?id=
 ## New Mutators ##
 You can select new mutators at Home Base!
 
-* **[ECTD] Rocket Bullets** - Replaces absolutely all projectiles by rockets. Rate of fire is unchanged.
 * **[ECTD] No Limit Nuggets** - If enabled, allows you to get more than 99 nuggets. If disabled, does NOT reset the nuggets amount.
-* **[ECTD] One Hit Player** - Getting even the tiniest amount of damage will result in your death.
-* **[ECTD] Giant Explosions** - Makes all explosions twice as big.
-* **[ECTD] Super Speed** - Everything in-game happens twice as fast.
 
 ## Characters created using ECTD ##
 When you're publishing your custom characters, you can use this template on Steam Workshop:
