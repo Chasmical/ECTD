@@ -14,7 +14,7 @@
 8.	[Changelog](https://github.com/Abbysssal/ECTD#changelog)
 
 ## ECTD (Edit Characters Through Description) ##
-#### Game version: v89 and later<br/>Mod version: v2.4<br/>Created by: Abbysssal#2020 ####
+#### Game version: v89 and later<br/>Mod version: v2.5<br/>Created by: Abbysssal#2020 ####
 
 **With ECTD you can:**
 *	Set Strength/Endurance/Accuracy/Speed to any value in range ±2147483647;
@@ -22,7 +22,7 @@
 *	Add any traits, ability upgrades and upgraded traits;
 *	Set unavailable abilities, for example WerewolfLunge or TutorialAbility;
 *	Set colors of body parts (+ custom colors R,G,B,A);
-*	Use new mutators, added by this mod;
+*	Use new mutator, added by this mod;
 
 ## Installation ##
 1.	Install BepInEx:
@@ -33,18 +33,8 @@
 3.  Drag the file "ECTD.dll" from the archive into directory /Steam/SteamApps/common/Streets of Rogue/BepInEx/plugins;
 4.  Done! Now run the game and enjoy!
 
-#### Installation for v2.2 and older ####
-1.	[Download the latest version of ECTD](https://github.com/Abbysssal/ECTD/releases);
-1.  Drag the file "Assembly-CSharp.dll" from the archive into directory /Steam/SteamApps/common/Streets of Rogue/StreetsOfRogue_Data/Managed/ (Replace if needed);
-2.  Done! Now run the game and enjoy!
-
 ## Deinstallation ##
 1.	Just remove "ECTD.dll" from /Steam/SteamApps/common/Streets of Rogue/BepInEx/plugins.
-
-#### Deintallation for v2.2 and older ####
-1.  Right-Click on Streets of Rogue in Steam and select "Properties";
-2.  Choose category "Local files";
-3.  Press "Verify integrity of game files".
 
 ## How to add items/traits? ##
 You need to type 'description commands' in your custom character's description, like so:
@@ -129,6 +119,18 @@ https://github.com/Abbysssal/ECTD/releases[/b]
 * [Visible Man](https://steamcommunity.com/sharedfiles/filedetails/?id=2098168599) by [Abbysssal](https://steamcommunity.com/id/Abbysssal/)
 
 ## Changelog ##
+
+#### ECTD v2.5 ####
+* Removed mutators "ECTD-RocketBullets" and "ECTD-GiantExplosions", because [aToM](https://github.com/Abbysssal/aToM) adds similar mutators;
+* Removed mutators "ECTD-OneHitPlayer" and "ECTD-SuperSpeed", because they are very buggy;
+* Added chat commands!;
+* "!help" lists all available commands;
+* "!item <ItemID> [Amount]" spawns the item at cursor's position;
+* "!agent <AgentID>" or "!npc <AgentID>" spawns the agent at cursor's position;
+* Fixed a bug, when ECTD didn't recognize item IDs with '-' and other symbols;
+
+#### ECTD v2.4.1 ####
+* Fixed a bug, when ECTD's mutators replaced original mutators in the Mutator Menu;
 
 #### ECTD v2.4 ####
 * Added new mutator "ECTD-NoLimitNuggets";
