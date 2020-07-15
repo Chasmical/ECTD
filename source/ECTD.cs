@@ -1,14 +1,12 @@
-﻿using System;
+﻿using BepInEx;
+using HarmonyLib;
+using System;
+using System.Collections.Generic;
 using System.IO;
 using System.Reflection;
-using System.Collections;
-using System.Collections.Generic;
-using System.Text.RegularExpressions;
 using System.Runtime.Serialization.Formatters.Binary;
-using BepInEx;
-using HarmonyLib;
+using System.Text.RegularExpressions;
 using UnityEngine;
-using UnityEngine.Networking;
 
 namespace ECTD
 {
@@ -205,7 +203,7 @@ namespace ECTD
 		public static void CharacterCreation_SaveCharacter(CharacterCreation __instance)
 		{
 			CharacterCreation cc = __instance;
-			
+
 			foreach (Match match in Regex.Matches(cc.descriptionChosen, "\\+\\+(.+)", RegexOptions.ECMAScript))
 			{
 				string itemID = match.Groups[1].Value;
@@ -357,7 +355,7 @@ namespace ECTD
 			GameController.gameController.unlocks.SaveUnlockData(true);
 			return false;
 		}
-		
+
 		public static bool Chatlog_PlayerEntersInput(Chatlog __instance)
 		{
 			string input = __instance.inputField.text;
