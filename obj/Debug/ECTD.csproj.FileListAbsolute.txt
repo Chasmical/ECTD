@@ -35,3 +35,13 @@ C:\Users\Администратор\Desktop\SoR Mods\ECTD\obj\Debug\ECTD.csproj.
 C:\Users\Администратор\Desktop\SoR Mods\ECTD\obj\Debug\ECTD.dll
 C:\Users\Администратор\Desktop\SoR Mods\ECTD\obj\Debug\ECTD.pdb
 C:\Users\Администратор\Desktop\SoR Mods\ECTD\bin\Debug\UnityEngine.AnimationModule.dll
+D:\repos\ECTD\bin\Debug\ECTD.dll
+D:\repos\ECTD\bin\Debug\ECTD.pdb
+D:\repos\ECTD\bin\Debug\UnityEngine.AnimationModule.dll
+D:\repos\ECTD\bin\Debug\UnityEngine.UnityWebRequestModule.dll
+D:\repos\ECTD\bin\Debug\UnityEngine.ImageConversionModule.dll
+D:\repos\ECTD\obj\Debug\ECTD.csprojAssemblyReference.cache
+D:\repos\ECTD\obj\Debug\ECTD.csproj.CoreCompileInputs.cache
+D:\repos\ECTD\obj\Debug\ECTD.csproj.CopyComplete
+D:\repos\ECTD\obj\Debug\ECTD.dll
+D:\repos\ECTD\obj\Debug\ECTD.pdb
