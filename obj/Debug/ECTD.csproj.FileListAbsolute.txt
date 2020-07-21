@@ -45,3 +45,14 @@ D:\repos\ECTD\obj\Debug\ECTD.csproj.CoreCompileInputs.cache
 D:\repos\ECTD\obj\Debug\ECTD.csproj.CopyComplete
 D:\repos\ECTD\obj\Debug\ECTD.dll
 D:\repos\ECTD\obj\Debug\ECTD.pdb
+D:\repos\ECTD\bin\Debug\0Harmony.dll
+D:\repos\ECTD\bin\Debug\Assembly-CSharp.dll
+D:\repos\ECTD\bin\Debug\BepInEx.dll
+D:\repos\ECTD\bin\Debug\UnityEngine.CoreModule.dll
+D:\repos\ECTD\bin\Debug\UnityEngine.dll
+D:\repos\ECTD\bin\Debug\UnityEngine.Networking.dll
+D:\repos\ECTD\bin\Debug\UnityEngine.UI.dll
+D:\repos\ECTD\bin\Debug\UnityEngine.AudioModule.dll
+D:\repos\ECTD\bin\Debug\UnityEngine.Physics2DModule.dll
+D:\repos\ECTD\bin\Debug\UnityEngine.UnityWebRequestWWWModule.dll
+D:\repos\ECTD\bin\Debug\UnityEngine.UnityWebRequestAudioModule.dll

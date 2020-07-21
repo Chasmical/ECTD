@@ -16,7 +16,7 @@ namespace ECTD
 	{
 		public const string pluginGuid = "abbysssal.streetsofrogue.ectd";
 		public const string pluginName = "ECTD";
-		public const string pluginVersion = "2.5";
+		public const string pluginVersion = "2.5.1";
 
 		public Dictionary<int, int> nuggetsDictionary;
 		public string nuggetsPath = Path.Combine(Paths.ManagedPath, "znuggets_big.cfg");
@@ -108,7 +108,7 @@ namespace ECTD
 		{
 			ECTDPatches.plugin = this;
 
-			Logger.LogInfo(pluginName + " v" + pluginVersion + " (" + pluginGuid + ") has started.");
+			Logger.LogInfo(string.Concat(pluginName, " v", pluginVersion, " (", pluginGuid, ") has started."));
 
 			LoadConfigFile();
 
@@ -197,6 +197,11 @@ namespace ECTD
 				foreach (string unlockName2 in saveCharacterData.items)
 					if (cc.gc.unlocks.GetUnlock(unlockName2, "Item") == null)
 						cc.gc.unlocks.AddUnlock(unlockName2, "Item", true);
+
+				if (cc.gc.unlocks.GetUnlock(saveCharacterData.specialAbility, "Ability") == null)
+					cc.gc.unlocks.AddUnlock(saveCharacterData.specialAbility, "Ability", true);
+				if (cc.gc.unlocks.GetUnlock(saveCharacterData.bigQuest + "_BQ", "BigQuest") == null)
+					cc.gc.unlocks.AddUnlock(saveCharacterData.bigQuest + "_BQ", "BigQuest", true);
 			}
 			#endregion
 		}
@@ -465,7 +470,7 @@ namespace ECTD
 			List<Unlock> listUnlocks = (List<Unlock>)AccessTools.Field(typeof(ScrollingMenu), "listUnlocks").GetValue(__instance);
 			if (unlockType == "Challenge")
 			{
-				listUnlocks.Insert(2, new Unlock("ECTD-NoLimitNuggets", "Challenge", true));
+				listUnlocks.Insert(1, new Unlock("ECTD-NoLimitNuggets", "Challenge", true));
 				__instance.numButtons += 1;
 			}
 		}
