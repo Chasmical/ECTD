@@ -1,20 +1,20 @@
-## Ссылки ##
-* [Скачать ECTD](https://github.com/Abbysssal/ECTD/releases)
-* [ECTD на GitHub](https://github.com/Abbysssal/ECTD)
-* [Руководство в Стиме (англ.)](https://steamcommunity.com/sharedfiles/filedetails/?id=2093706214)
-
-## Содержание ##
-1.	[Что такое ECTD?](https://github.com/Abbysssal/ECTD/blob/master/README-ru.md#ectd-edit-characters-through-description)
-2.	[Установка](https://github.com/Abbysssal/ECTD/blob/master/README-ru.md#установка)
-3.	[Деинсталляция](https://github.com/Abbysssal/ECTD/blob/master/README-ru.md#деинсталляция)
-4.	[Как пользоваться ECTD?](https://github.com/Abbysssal/ECTD/blob/master/README-ru.md#как-добавлять-предметыособенности)
-5.	[Список команд](https://github.com/Abbysssal/ECTD/blob/master/README-ru.md#список-команд)
-6.	[Новые мутаторы](https://github.com/Abbysssal/ECTD/blob/master/README-ru.md#новые-мутаторы)
-7.	[Персонажи, созданные с ECTD](https://github.com/Abbysssal/ECTD/blob/master/README-ru.md#персонажи-созданные-с-ectd)
-8.	[Список изменений](https://github.com/Abbysssal/ECTD/blob/master/README-ru.md#список-изменений)
-
 ## ECTD (Edit Characters Through Description) ##
-#### Версия игры: v89 и новее<br/>Версия мода: v2.5<br/>Автор мода: Abbysssal#2020 ####
+
+<div align="center">
+  <a href="https://github.com/Abbysssal/ECTD/releases/latest">
+    <img src="https://img.shields.io/github/v/release/Abbysssal/ECTD?label=Latest%20release&logo=github&style=for-the-badge" alt="Последний релиз"/>
+  </a>
+  <br/>
+  <a href="https://github.com/Abbysssal/ECTD/releases">
+    <img src="https://img.shields.io/github/downloads/Abbysssal/ECTD/total?label=Downloads&style=for-the-badge" alt="Скачивания"/>
+  </a>
+  <a href="https://github.com/Abbysssal/ECTD/subscription">
+    <img src="https://img.shields.io/github/watchers/Abbysssal/ECTD?color=green&label=Watchers&style=for-the-badge" alt="Смотрители(?)"/>
+  </a>
+  <a href="https://github.com/Abbysssal/ECTD/stargazers">
+    <img src="https://img.shields.io/github/stars/Abbysssal/ECTD?color=green&style=for-the-badge" alt="Звёзды"/>
+  </a>
+</div>
 
 **С ECTD вы можете:**
 *	Изменять значения характеристик в диапазоне ±2147483647;
@@ -23,6 +23,21 @@
 *	Ставить любые способности, например Рывок Вервольфа;
 *	Изменять цвета частей тела (+ кастомные цвета R,G,B,A);
 *	Ставить новый добавляемый этим модом мутатор;
+
+## Ссылки ##
+* [Скачать ECTD](https://github.com/Abbysssal/ECTD/releases)
+* [ECTD на GitHub](https://github.com/Abbysssal/ECTD)
+* [Руководство в Стиме (англ.)](https://steamcommunity.com/sharedfiles/filedetails/?id=2093706214)
+* [Коллекция персонажей, созданных с ECTD, в Стиме](https://steamcommunity.com/sharedfiles/filedetails/?id=2098198414)
+
+## Содержание ##
+1.	[Установка](https://github.com/Abbysssal/ECTD/blob/master/README-ru.md#установка)
+2.	[Деинсталляция](https://github.com/Abbysssal/ECTD/blob/master/README-ru.md#деинсталляция)
+3.	[Как пользоваться ECTD?](https://github.com/Abbysssal/ECTD/blob/master/README-ru.md#как-добавлять-предметыособенности)
+4.	[Список команд](https://github.com/Abbysssal/ECTD/blob/master/README-ru.md#список-команд)
+5.	[Новые мутаторы](https://github.com/Abbysssal/ECTD/blob/master/README-ru.md#новые-мутаторы)
+6.	[Персонажи, созданные с ECTD](https://github.com/Abbysssal/ECTD/blob/master/README-ru.md#персонажи-созданные-с-ectd)
+7.	[Список изменений](https://github.com/Abbysssal/ECTD/blob/master/README-ru.md#список-изменений)
 
 ## Установка ##
 1.	Установите BepInEx:
@@ -115,10 +130,13 @@ https://github.com/Abbysssal/ECTD/releases[/b]
 https://github.com/Abbysssal/ECTD/releases[/b]
 ```
 
-* [Киборг](https://steamcommunity.com/sharedfiles/filedetails/?id=2092648215) и [Джедай](https://steamcommunity.com/sharedfiles/filedetails/?id=2098216250) [(Qenapp)](https://steamcommunity.com/id/Qenapp)
-* [Видимый человек](https://steamcommunity.com/sharedfiles/filedetails/?id=2098168599) [(Abbysssal)](https://steamcommunity.com/id/Abbysssal/)
+https://steamcommunity.com/sharedfiles/filedetails/?id=2098198414
 
 ## Список изменений ##
+
+#### ECTD v2.5.1 ####
+* Исправил баг, из-за которого кастомные способности и большие квесты из других модов не работали на персонажах из Мастерской;
+* Исправил положение мутатора "[ECTD] Безлимитные наггетсы" в Меню мутаторов;
 
 #### ECTD v2.5 ####
 * Убрал мутаторы "ECTD-RocketBullets" и "ECTD-GiantExplosions", потому что [aToM](https://github.com/Abbysssal/aToM) добавляет похожие мутаторы;

@@ -70,5 +70,15 @@
     <Compile Include="source\ECTD.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
+  <ItemGroup>
+    <Content Include="All Ability IDs.txt" />
+    <Content Include="All Color IDs.txt" />
+    <Content Include="All Item IDs.txt" />
+    <Content Include="All Trait IDs.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="README-ru.md" />
+    <None Include="README.md" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

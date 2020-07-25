@@ -1,20 +1,20 @@
-## Links ##
-* [Download ECTD](https://github.com/Abbysssal/ECTD/releases)
-* [ECTD at GitHub](https://github.com/Abbysssal/ECTD)
-* [Steam guide](https://steamcommunity.com/sharedfiles/filedetails/?id=2093706214)
-
-## Contents ##
-1.	[What is ECTD?](https://github.com/Abbysssal/ECTD#ectd-edit-characters-through-description)
-2.	[Installation](https://github.com/Abbysssal/ECTD#installation)
-3.	[Deinstallation](https://github.com/Abbysssal/ECTD#deintallation)
-4.	[How to use ECTD?](https://github.com/Abbysssal/ECTD#how-to-add-itemstraits)
-5.	['Description Commands'](https://github.com/Abbysssal/ECTD#description-commands)
-6.	[New Mutators](https://github.com/Abbysssal/ECTD#new-mutators)
-7.	[Characters created using ECTD](https://github.com/Abbysssal/ECTD#characters-created-using-ectd)
-8.	[Changelog](https://github.com/Abbysssal/ECTD#changelog)
-
 ## ECTD (Edit Characters Through Description) ##
-#### Game version: v89 and later<br/>Mod version: v2.5<br/>Created by: Abbysssal#2020 ####
+
+<div align="center">
+  <a href="https://github.com/Abbysssal/ECTD/releases/latest">
+    <img src="https://img.shields.io/github/v/release/Abbysssal/ECTD?label=Latest%20release&logo=github&style=for-the-badge" alt="Latest release"/>
+  </a>
+  <br/>
+  <a href="https://github.com/Abbysssal/ECTD/releases">
+    <img src="https://img.shields.io/github/downloads/Abbysssal/ECTD/total?label=Downloads&style=for-the-badge" alt="Downloads"/>
+  </a>
+  <a href="https://github.com/Abbysssal/ECTD/subscription">
+    <img src="https://img.shields.io/github/watchers/Abbysssal/ECTD?color=green&label=Watchers&style=for-the-badge" alt="Watchers"/>
+  </a>
+  <a href="https://github.com/Abbysssal/ECTD/stargazers">
+    <img src="https://img.shields.io/github/stars/Abbysssal/ECTD?color=green&style=for-the-badge" alt="Stars"/>
+  </a>
+</div>
 
 **With ECTD you can:**
 *	Set Strength/Endurance/Accuracy/Speed to any value in range ±2147483647;
@@ -23,6 +23,21 @@
 *	Set unavailable abilities, for example WerewolfLunge or TutorialAbility;
 *	Set colors of body parts (+ custom colors R,G,B,A);
 *	Use new mutator, added by this mod;
+
+## Links ##
+* [Download ECTD](https://github.com/Abbysssal/ECTD/releases)
+* [ECTD on GitHub](https://github.com/Abbysssal/ECTD)
+* [Steam guide](https://steamcommunity.com/sharedfiles/filedetails/?id=2093706214)
+* [Steam collection of characters using ECTD](https://steamcommunity.com/sharedfiles/filedetails/?id=2098198414)
+
+## Contents ##
+1.	[Installation](https://github.com/Abbysssal/ECTD#installation)
+2.	[Deinstallation](https://github.com/Abbysssal/ECTD#deintallation)
+3.	[How to use ECTD?](https://github.com/Abbysssal/ECTD#how-to-add-itemstraits)
+4.	['Description Commands'](https://github.com/Abbysssal/ECTD#description-commands)
+5.	[New Mutators](https://github.com/Abbysssal/ECTD#new-mutators)
+6.	[Characters created using ECTD](https://github.com/Abbysssal/ECTD#characters-created-using-ectd)
+7.	[Changelog](https://github.com/Abbysssal/ECTD#changelog)
 
 ## Installation ##
 1.	Install BepInEx:
@@ -111,10 +126,13 @@ You can find the latest release here:
 https://github.com/Abbysssal/ECTD/releases[/b]
 ```
 
-* [Cyborg](https://steamcommunity.com/sharedfiles/filedetails/?id=2092648215) and [Jedi](https://steamcommunity.com/sharedfiles/filedetails/?id=2098216250) by [Qenapp](https://steamcommunity.com/id/Qenapp)
-* [Visible Man](https://steamcommunity.com/sharedfiles/filedetails/?id=2098168599) by [Abbysssal](https://steamcommunity.com/id/Abbysssal/)
+https://steamcommunity.com/sharedfiles/filedetails/?id=2098198414
 
 ## Changelog ##
+
+#### ECTD v2.5.1 ####
+* Fixed a bug, when custom special abilities and big quests didn't work with imported characters;
+* Fixed "[ECTD] No Limit Nuggets" mutator's position in the Mutator Menu;
 
 #### ECTD v2.5 ####
 * Removed mutators "ECTD-RocketBullets" and "ECTD-GiantExplosions", because [aToM](https://github.com/Abbysssal/aToM) adds similar mutators;
