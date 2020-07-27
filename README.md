@@ -1,6 +1,5 @@
-## ECTD (Edit Characters Through Description) ##
-
 <div align="center">
+  <h2>ECTD (Edit Characters Through Description)</h2>
   <a href="https://github.com/Abbysssal/ECTD/releases/latest">
     <img src="https://img.shields.io/github/v/release/Abbysssal/ECTD?label=Latest%20release&logo=github&style=for-the-badge" alt="Latest release"/>
   </a>
