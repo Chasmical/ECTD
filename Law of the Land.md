@@ -2,16 +2,15 @@
 
 #### Sign on one of the levels / Cop Rules ####
 
-> Law of the Land:
-> 1. If we didn't see it, it didn't happen!  Please commit all crimes within our view!
-> 2. If it's out of our jurisdiction, we're not dealin' with it!
-> 3. No fightin'! Unless protectin' your property. Then we protect you!
-> 4. No breakin'! Breakdancing is acceptable.
-> 5. No stealin'!
-> 6. No tamperin'!
-> 7. No picture takin'!
->
-> All punishable by DEATH!
+> __Law of the Land:__<br/>
+> __1. If we didn't see it, it didn't happen!  Please commit all crimes within our view!__<br/>
+> __2. If it's out of our jurisdiction, we're not dealin' with it!__<br/>
+> __3. No fightin'! Unless protectin' your property. Then we protect you!__<br/>
+> __4. No breakin'! Breakdancing is acceptable.__<br/>
+> __5. No stealin'!__<br/>
+> __6. No tamperin'!__<br/>
+> __7. No picture takin'!__<br/>
+> __All punishable by DEATH!__
 
 #### Cop's description ####
 
@@ -59,7 +58,7 @@
 
 #### Comedian interaction dialogue ####
 
-> I can't believe the Mayor banned jokes about walrus hygiene... That was my whole schtick!
+> I can't believe __the Mayor banned jokes about walrus hygiene__... That was my whole schtick!
 
 #### Streets of Rogue Soundtrack's description on Steam ####
 
@@ -72,12 +71,11 @@
 > I might raise taxes on bacon cheeseburgers.<br/>
 > I may have spent some of my campaign money on socks.
 
-
 #### Excerpt from a dialogue in the Tutorial ####
 
 > - Look, you have no right to allow some random guy off the street to take shots at me for the sake of some.. what did you call it, "Tutorial"?<br/>
 > - We can do whatever we want to you, we're the ones in charge!<br/>
-> - You know, this is the same sort of ridiculous authoritarian crap that the Mayor pulls...<br/>
+> - You know, this is the same sort of __ridiculous authoritarian crap that the Mayor pulls__...<br/>
 > - Stop being a wimp, you'll be fine!
 
 
