@@ -10,6 +10,7 @@
 > 5. No stealin'!
 > 6. No tamperin'!
 > 7. No picture takin'!
+>
 > All punishable by DEATH!
 
 #### Cop's description ####
@@ -34,26 +35,26 @@
 
 #### Excerpt from a Home Base intro ####
 
-> FOURTH: As you may know, __the Mayor has banned Chicken Nuggets, due to the fact that they once caused him a mild tummy ache__.
-> Chicken Nuggets have since become a rare and precious commodity.
-> If you can scrounge up some Chicken Nuggets, we can trade 'em for things that can help you out.
+> FOURTH: As you may know, __the Mayor has banned Chicken Nuggets, due to the fact that they once caused him a mild tummy ache__.<br/>
+> Chicken Nuggets have since become a rare and precious commodity.<br/>
+> If you can scrounge up some Chicken Nuggets, we can trade 'em for things that can help you out.<br/>
 > The Doctor, Thief and Soldier can brief you a bit more on the Nugget situation.
 
 #### Excerpt from the game intro ####
 
-> Once home to peace and prosperity, the city has fallen into the hands of __a ruthless and dictatorial Mayor__.
-> Elected on __vague promises of "lower taxes" and "more beer"__, his true colors began to show immediately upon his inauguration.
-> __The Mayor's first executive orders were a massive raise on taxes, and a one-time confiscation of all alcoholic beverages__.
-> He stated that the confiscation was so he could throw "the mother of all ragers" for his constituents.
-> But in reality, there was only like one keg and a bag of tortilla chips.
-> It was suuuper lame.
+> Once home to peace and prosperity, the city has fallen into the hands of __a ruthless and dictatorial Mayor__.<br/>
+> Elected on __vague promises of "lower taxes" and "more beer"__, his true colors began to show immediately upon his inauguration.<br/>
+> __The Mayor's first executive orders were a massive raise on taxes, and a one-time confiscation of all alcoholic beverages__.<br/>
+> He stated that the confiscation was so he could throw "the mother of all ragers" for his constituents.<br/>
+> But in reality, there was only like one keg and a bag of tortilla chips.<br/>
+> It was suuuper lame.<br/>
 > He used the money and extra booze to fund a private army of goons, happy to carry out his every nefarious bidding.
 
 #### Excerpt from signs in the Mayor's Office ####
 
-> Anyone can run for Mayor!  Here's what determines your electability:
-> Making people like you, getting rid of people who don't, people being the same class as you, and engaging in fruitful financial transactions.
-> You'll need a majority of floors to vote in your favor.  The existing mayor starts with an advantage!
+> Anyone can run for Mayor!  Here's what determines your electability:<br/>
+> Making people like you, getting rid of people who don't, people being the same class as you, and engaging in fruitful financial transactions.<br/>
+> You'll need a majority of floors to vote in your favor.  The existing mayor starts with an advantage!<br/>
 > All non-imprisoned living/undead residents of the city have a vote!
 
 #### Comedian interaction dialogue ####
@@ -68,15 +69,15 @@
 
 #### Record of Evidence ####
 
-> I might raise taxes on bacon cheeseburgers.
+> I might raise taxes on bacon cheeseburgers.<br/>
 > I may have spent some of my campaign money on socks.
 
 
 #### Excerpt from a dialogue in the Tutorial ####
 
-> - Look, you have no right to allow some random guy off the street to take shots at me for the sake of some.. what did you call it, "Tutorial"?
-> - We can do whatever we want to you, we're the ones in charge!
-> - You know, this is the same sort of ridiculous authoritarian crap that the Mayor pulls...
+> - Look, you have no right to allow some random guy off the street to take shots at me for the sake of some.. what did you call it, "Tutorial"?<br/>
+> - We can do whatever we want to you, we're the ones in charge!<br/>
+> - You know, this is the same sort of ridiculous authoritarian crap that the Mayor pulls...<br/>
 > - Stop being a wimp, you'll be fine!
 
 
