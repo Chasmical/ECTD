@@ -1,4 +1,4 @@
-## Mayor's laws ##
+## Facts ##
 
 #### Sign on one of the levels / Cop Rules ####
 
