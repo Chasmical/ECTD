@@ -15,7 +15,7 @@ namespace ECTD
 	{
 		public const string pluginGuid = "abbysssal.streetsofrogue.ectd";
 		public const string pluginName = "ECTD";
-		public const string pluginVersion = "2.5.1";
+		public const string pluginVersion = "2.6";
 
 		public Dictionary<int, int> nuggetsDictionary;
 		public string nuggetsPath = Path.Combine(Paths.ManagedPath, "znuggets_big.cfg");
