@@ -11,7 +11,7 @@ AmmoStealer, SafeBuster, Cologne, Shrinker, ShrinkRay, DoorDetonator, FriendPhon
 PortableSellOMatic, Shuriken, Necronomicon, HiringVoucher, CyanidePill, KillProfiterAmmo (Kill Ammunizer), KillProfiterHealth (Kill
 Healthenizer), Blindenizer, ParalyzerTrap, Fud, Taser, MayorHat, MayorBadge, HotFud, MayorEvidence, MonkeyBarrel, AmmoCapacityMod,
 RateOfFireMod, BodySwapper, ExplosiveStimulator, Fireworks, WalkieTalkie, MemoryEraser, GrenadeWarp, BloodBag, Antidote, BooUrn,
-Revolver, BombMaker
+Revolver, BombMaker, GhostBlaster
 
 ===== Items-abilities =====
 Laptop, ChloroformHankie, StealingGlove, WaterCannon, LaserGun
