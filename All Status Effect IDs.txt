@@ -1,0 +1,9 @@
+===== Status Effects =====
+AmmoProcessor, Boombox, WallBypasser, HearingBlocker, SlaveHelmetRemover, ArmorDurabilityDoubler, MeleeDurabilityDoubler, CritterUpper,
+Resurrection, Electrocuted, Revenue, InDebt3, InDebt2, InDebt, IncreaseAllStats, MindControlling, DeliverPackage, HearingBlocked,
+ChargeLevel1, ChargeLevel2, ChargeLevel3, ChargeLevel4, InvisiblePermanent, Accurate, DecreaseAllStats, Poisoned, Cyanide, Withdrawal,
+FeelingGood, AboveTheLaw, InvisibleLimited, NumbToPain, BlockDebuffs, Weak, ExtraLife, Loud, Enraged, FeelingLucky, Fast,
+FeelingUnlucky, BadVision, Confused, Drunk, Giant, Frozen, Shrunk, Invisible, ElectroTouch, AlwaysCrit, OnFire, Acid, NiceSmelling,
+Strength, KillerThrower, Invincible, OweCops1, OweCops2, Paralyzed, Slow, Nicotine, ZombieSpirit, Tranquilized, WerewolfEffect,
+RegenerateHealth, RegenerateHealthFaster, DizzyB, Dizzy, ResistBulletsSmall, ResistDamageSmall, ResistDamageMed, ResistDamageLarge,
+ResistFire, IgnoreLasers, Mystery
