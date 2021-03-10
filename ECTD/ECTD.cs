@@ -15,19 +15,21 @@ namespace ECTD
 	{
 		public const string pluginGuid = "abbysssal.streetsofrogue.ectd";
 		public const string pluginName = "ECTD";
-		public const string pluginVersion = "2.6";
+		public const string pluginVersion = "2.7";
 
 		public Dictionary<int, int> nuggetsDictionary;
 		public string nuggetsPath = Path.Combine(Paths.ManagedPath, "znuggets_big.cfg");
 
 		public Harmony harmony;
 
-		public void PrefixAndLog(Type type, string methodName, Type[] types = null)
+		public void PrefixAndLog(Type type, string methodName, Type[] types = null, int extra = 0)
 		{
 			try
 			{
 				MethodInfo original = AccessTools.Method(type, methodName, types);
-				MethodInfo patch = AccessTools.Method(typeof(ECTDPatches), type.Name + "_" + methodName);
+				string patchName = type.Name + "_" + methodName;
+				if (extra != 0) patchName += extra;
+				MethodInfo patch = AccessTools.Method(typeof(ECTDPatches), patchName);
 				harmony.Patch(original, new HarmonyMethod(patch));
 				Logger.LogInfo(type.Name + "." + methodName + "(..) patched.");
 			}
@@ -121,8 +123,11 @@ namespace ECTD
 			// ECTD-NoLimitNuggets
 			PrefixAndLog(typeof(Unlocks), "AddNuggets");
 
-			// ECTD Chat Commands
-			PrefixAndLog(typeof(Chatlog), "PlayerEntersInput");
+			PrefixAndLog(typeof(InvItem), "SetupDetails");
+			PrefixAndLog(typeof(InvDatabase), "AddItemPlayerStart");
+
+			PrefixAndLog(typeof(InvDatabase), "SubtractFromItemCount", new Type[] { typeof(int), typeof(int), typeof(bool) });
+			PrefixAndLog(typeof(InvDatabase), "SubtractFromItemCount", new Type[] { typeof(InvItem), typeof(int), typeof(bool) }, 2);
 
 			// ECTD Localization
 			PostfixAndLog(typeof(NameDB), "GetName");
@@ -133,7 +138,7 @@ namespace ECTD
 
 		}
 	}
-	public class ECTDPatches
+	public static class ECTDPatches
 	{
 		public static ECTDPlugin plugin;
 
@@ -178,8 +183,7 @@ namespace ECTD
 				{
 					try
 					{
-						if (fileStream != null)
-							fileStream.Close();
+						fileStream?.Close();
 					}
 					catch
 					{
@@ -324,7 +328,7 @@ namespace ECTD
 			}
 			if (colorChoice.StartsWith(":"))
 			{
-				color = new Color32(255, 255, 255, 255);
+				color = new Color32(0, 0, 0, 255);
 				noncustom = false;
 				string[] splitted = colorChoice.Substring(1).Split(new char[] { '-', '.', '|', ':', '_', ',', ';' });
 				if (splitted.Length >= 1 && int.TryParse(splitted[0], out int red))
@@ -360,98 +364,44 @@ namespace ECTD
 			return false;
 		}
 
-		public static bool Chatlog_PlayerEntersInput(Chatlog __instance)
+		private static bool DoTheNumber(ref string itemName, ref int itemCount)
 		{
-			string input = __instance.inputField.text;
-
-			Match cmd1 = Regex.Match(input, "!([a-zA-Z]+)");
-			Match cmd2 = Regex.Match(input, "!([a-zA-Z]+) ([a-zA-Z0-9-]+)");
-			Match cmd3 = Regex.Match(input, "!([a-zA-Z]+) ([a-zA-Z]+) ([a-zA-Z0-9-.|:_,;]+)");
-
-			string command;
-			string subcommand;
-			string value;
-			int level;
-
-			if (cmd3.Success)
+			int index = itemName.IndexOf('+');
+			if (index != -1)
 			{
-				command = cmd3.Groups[1].Value.ToLower();
-				subcommand = cmd3.Groups[2].Value;
-				value = cmd3.Groups[3].Value;
-				level = 3;
-			}
-			else if (cmd2.Success)
-			{
-				command = cmd2.Groups[1].Value.ToLower();
-				subcommand = null;
-				value = cmd2.Groups[2].Value;
-				level = 2;
-			}
-			else if (cmd1.Success)
-			{
-				command = cmd1.Groups[1].Value.ToLower();
-				subcommand = null;
-				value = null;
-				level = 1;
-			}
-			else
-				return true;
-
-			GameController gc = __instance.gc;
-			Plane plane = new Plane(new Vector3(0, 0, 1), new Vector3(0, 0, 0));
-			Ray mouseRay = Camera.main.ScreenPointToRay(Input.mousePosition);
-			Vector3 spawnPosition = gc.playerAgent.curPosition;
-			if (plane.Raycast(mouseRay, out float enter))
-				spawnPosition = mouseRay.GetPoint(enter);
-
-			if (command == "help" && level == 1)
-			{
-				__instance.AddChatlogText("List of available commands:", false);
-				__instance.AddChatlogText("!help - this command", false);
-				__instance.AddChatlogText("!item <Item ID> [Amount] - spawns an item with the specified ID and amount", false);
-				__instance.AddChatlogText("!agent <Agent ID> - spawns an agent with the specified ID", false);
-				__instance.AddChatlogText("!npc <Agent ID> - same as /agent <Agent ID>", true);
-			}
-			else if (command == "item" && level == 2)
-			{
-				InvItem invItem = new InvItem
+				string numStr = itemName.Substring(index + 1);
+				if (string.Equals(numStr, "INF", StringComparison.InvariantCultureIgnoreCase)
+					|| string.Equals(numStr, "INFINITE", StringComparison.InvariantCultureIgnoreCase)
+					|| string.Equals(numStr, "INFINITY", StringComparison.InvariantCultureIgnoreCase))
 				{
-					invItemName = value,
-					invItemCount = 1
-				};
-				invItem.ItemSetup(false);
-				gc.spawnerMain.SpawnItem(spawnPosition, invItem);
-				__instance.AddChatlogText("Spawned item '" + value + "' x1", true);
-			}
-			else if (command == "item" && level == 3)
-			{
-				if (!int.TryParse(value, out int amount))
-					amount = 1;
-
-				InvItem invItem = new InvItem
+					itemName = itemName.Substring(0, index);
+					itemCount = -1;
+					return true;
+				}
+				else if (int.TryParse(numStr, out int count))
 				{
-					invItemName = subcommand,
-					invItemCount = amount
-				};
-				invItem.ItemSetup(false);
-				gc.spawnerMain.SpawnItem(spawnPosition, invItem);
-				__instance.AddChatlogText("Spawned item '" + subcommand + "' x" + amount + "", true);
+					itemName = itemName.Substring(0, index);
+					itemCount = count;
+					return true;
+				}
 			}
-			else if ((command == "agent" || command == "npc") && level == 2)
-			{
-				gc.spawnerMain.SpawnAgent(spawnPosition, value, 0);
-				__instance.AddChatlogText("Spawned agent '" + value + "'", true);
-			}
-			else
-			{
-				__instance.AddChatlogText("Unknown command! See !help", true);
-			}
-
-			return true;
+			return false;
 		}
+
+		public static void InvItem_SetupDetails(InvItem __instance)
+		{
+			if (DoTheNumber(ref __instance.invItemName, ref __instance.invItemCount))
+				__instance.rewardCount = __instance.invItemCount;
+		}
+		public static void InvDatabase_AddItemPlayerStart(ref string itemName, ref int itemCount) => DoTheNumber(ref itemName, ref itemCount);
+
+		public static bool InvDatabase_SubtractFromItemCount(InvDatabase __instance, int slotNum) => __instance.InvItemList[slotNum].invItemCount != -1;
+		public static bool InvDatabase_SubtractFromItemCount2(InvItem invItem) => invItem.invItemCount != -1;
 
 		public static void NameDB_GetName(NameDB __instance, string myName, ref string __result)
 		{
+			int count = 0;
+			DoTheNumber(ref myName, ref count);
 			// "english", "schinese", "german", "spanish", "brazilian", "russian", "french", "koreana"
 			string language = __instance.language;
 
@@ -470,7 +420,7 @@ namespace ECTD
 			if (unlockType == "Challenge")
 			{
 				listUnlocks.Insert(1, new Unlock("ECTD-NoLimitNuggets", "Challenge", true));
-				__instance.numButtons += 1;
+				__instance.numButtons++;
 			}
 		}
 	}
