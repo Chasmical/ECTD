@@ -3,6 +3,8 @@
   <a href="https://github.com/Abbysssal/ECTD/releases/latest">
     <img src="https://img.shields.io/github/v/release/Abbysssal/ECTD?label=Latest%20release&logo=github&style=for-the-badge" alt="Latest release"/>
   </a>
+    <a href="https://github.com/Abbysssal/ECTD/releases">
+      <img src="https://img.shields.io/github/v/release/Abbysssal/ECTD?include_prereleases&label=Latest%20pre-release&style=for-the-badge&logo=github" alt="Latest pre-release"/>
   <br/>
   <a href="https://github.com/Abbysssal/ECTD/releases">
     <img src="https://img.shields.io/github/downloads/Abbysssal/ECTD/total?label=Downloads&style=for-the-badge" alt="Downloads"/>
