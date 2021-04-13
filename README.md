@@ -78,7 +78,7 @@ See the [guide in Steam](https://steamcommunity.com/sharedfiles/filedetails/?id=
 <br/>Examples: `++Grenade`, `++PlasmaSword`, `++Hypnotizer2`;
 <br/>See [All Item IDs.txt](https://github.com/Abbysssal/ECTD/blob/master/All%20Item%20IDs.txt);
 
-  **Now you can specify item counts! *(с v2.7)*:**<br/>
+  **Now you can specify item counts! *(v2.7)*:**<br/>
 `++RocketLauncher+Inf`, `++Grenade+Infinity`, `++BananaPeel+Infinite`.
 
 * `--<Item ID>` - removes an item with the specified ID from the custom character;
