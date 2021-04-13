@@ -15,10 +15,11 @@ namespace ECTD
 	{
 		public const string pluginGuid = "abbysssal.streetsofrogue.ectd";
 		public const string pluginName = "ECTD";
-		public const string pluginVersion = "2.7";
+		public const string pluginVersion = "2.8";
 
 		public Dictionary<int, int> nuggetsDictionary;
 		public string nuggetsPath = Path.Combine(Paths.ManagedPath, "znuggets_big.cfg");
+		public string settingPath = Path.Combine(Paths.ConfigPath, "ectd-nomessages.cfg");
 
 		public Harmony harmony;
 
@@ -95,7 +96,28 @@ namespace ECTD
 					session.nuggets = nuggetsDictionary[session.saveSlot] = Mathf.Min(session.nuggets, ectdNuggets);
 				else
 					nuggetsDictionary[session.saveSlot] = session.nuggets;
+
 			SaveNuggets();
+		}
+		public void LoadSettingFile()
+		{
+			try
+			{
+				if (File.Exists(settingPath))
+				{
+					string text = File.ReadAllText(settingPath);
+					ECTDPatches.nomessages = string.Equals(text, "true", StringComparison.InvariantCultureIgnoreCase)
+						|| (string.Equals(text, "false", StringComparison.InvariantCultureIgnoreCase) ? false
+						: throw new InvalidOperationException());
+				}
+				else throw new FileNotFoundException();
+			}
+			catch
+			{
+				Logger.LogWarning($"{Path.GetFileName(settingPath)} does not exist or does not contain valid information!");
+				Logger.LogWarning($"Created a new {Path.GetFileName(settingPath)} file (False).");
+				File.WriteAllText(settingPath, "False");
+			}
 		}
 		public void SaveNuggets()
 		{
@@ -112,6 +134,7 @@ namespace ECTD
 			Logger.LogInfo(string.Concat(pluginName, " v", pluginVersion, " (", pluginGuid, ") has started."));
 
 			LoadConfigFile();
+			LoadSettingFile();
 
 			harmony = new Harmony(pluginGuid);
 
@@ -141,6 +164,7 @@ namespace ECTD
 	public static class ECTDPatches
 	{
 		public static ECTDPlugin plugin;
+		public static bool nomessages;
 
 		public static void CharacterCreation_LoadCharacter2(CharacterCreation __instance, string characterName, bool secondTry, bool foundFile, object mySaveObject)
 		{
@@ -191,22 +215,6 @@ namespace ECTD
 				}
 			}
 			#endregion
-			#region changes
-			if (saveCharacterData != null)
-			{
-				foreach (string unlockName in saveCharacterData.traits)
-					if (cc.gc.unlocks.GetUnlock(unlockName, "Trait") == null)
-						cc.gc.unlocks.AddUnlock(unlockName, "Trait", true);
-				foreach (string unlockName2 in saveCharacterData.items)
-					if (cc.gc.unlocks.GetUnlock(unlockName2, "Item") == null)
-						cc.gc.unlocks.AddUnlock(unlockName2, "Item", true);
-
-				if (cc.gc.unlocks.GetUnlock(saveCharacterData.specialAbility, "Ability") == null)
-					cc.gc.unlocks.AddUnlock(saveCharacterData.specialAbility, "Ability", true);
-				if (cc.gc.unlocks.GetUnlock(saveCharacterData.bigQuest + "_BQ", "BigQuest") == null)
-					cc.gc.unlocks.AddUnlock(saveCharacterData.bigQuest + "_BQ", "BigQuest", true);
-			}
-			#endregion
 		}
 		public static void CharacterCreation_SaveCharacter(CharacterCreation __instance)
 		{
@@ -216,7 +224,7 @@ namespace ECTD
 			{
 				string itemID = match.Groups[1].Value;
 				cc.itemsChosen.Add(new Unlock(itemID, "Item", true));
-				cc.descriptionChosen = cc.descriptionChosen.Replace(match.Value, "[Item '" + itemID + "' added]");
+				cc.descriptionChosen = cc.descriptionChosen.Replace(match.Value, nomessages ? "" : "[Item '" + itemID + "' added]");
 			}
 			foreach (Match match in Regex.Matches(cc.descriptionChosen, "\\-\\-(.+)", RegexOptions.ECMAScript))
 			{
@@ -225,14 +233,14 @@ namespace ECTD
 				if (index != -1)
 				{
 					cc.itemsChosen.RemoveAt(index);
-					cc.descriptionChosen = cc.descriptionChosen.Replace(match.Value, "[Item '" + itemID + "' removed]");
+					cc.descriptionChosen = cc.descriptionChosen.Replace(match.Value, nomessages ? "" : "[Item '" + itemID + "' removed]");
 				}
 			}
 			foreach (Match match in Regex.Matches(cc.descriptionChosen, "\\*\\*(.+)", RegexOptions.ECMAScript))
 			{
 				string traitID = match.Groups[1].Value;
 				cc.traitsChosen.Add(new Unlock(traitID, "Trait", true));
-				cc.descriptionChosen = cc.descriptionChosen.Replace(match.Value, "[Trait '" + traitID + "' added]");
+				cc.descriptionChosen = cc.descriptionChosen.Replace(match.Value, nomessages ? "" : "[Trait '" + traitID + "' added]");
 			}
 			foreach (Match match in Regex.Matches(cc.descriptionChosen, "\\/\\/(.+)", RegexOptions.ECMAScript))
 			{
@@ -241,7 +249,7 @@ namespace ECTD
 				if (index != -1)
 				{
 					cc.traitsChosen.RemoveAt(index);
-					cc.descriptionChosen = cc.descriptionChosen.Replace(match.Value, "[Trait '" + traitID + "' removed]");
+					cc.descriptionChosen = cc.descriptionChosen.Replace(match.Value, nomessages ? "" : "[Trait '" + traitID + "' removed]");
 				}
 			}
 			foreach (Match match in Regex.Matches(cc.descriptionChosen, "\\!\\!items", RegexOptions.ECMAScript))
@@ -265,7 +273,7 @@ namespace ECTD
 				string statID = match.Groups[1].Value;
 				if (int.TryParse(match.Groups[2].Value, out int value))
 				{
-					cc.descriptionChosen = cc.descriptionChosen.Replace(match.Value, "['" + statID + "' set to '" + value + "']");
+					cc.descriptionChosen = cc.descriptionChosen.Replace(match.Value, nomessages ? "" : "['" + statID + "' set to '" + value + "']");
 					if (statID == "Strength" || statID == "Str")
 						cc.strength = value - 1;
 					else if (statID == "Endurance" || statID == "End")
@@ -280,7 +288,7 @@ namespace ECTD
 			{
 				string abilityID = match.Groups[1].Value;
 				cc.abilityChosen = abilityID;
-				cc.descriptionChosen = cc.descriptionChosen.Replace(match.Value, "[Ability set to '" + abilityID + "']");
+				cc.descriptionChosen = cc.descriptionChosen.Replace(match.Value, nomessages ? "" : "[Ability set to '" + abilityID + "']");
 			}
 			foreach (Match match in Regex.Matches(cc.descriptionChosen, "\\:\\:(Skin|Hair|Legs|Body|Eyes)(\\=.+)?", RegexOptions.ECMAScript))
 			{
@@ -296,7 +304,7 @@ namespace ECTD
 					else if (partID == "Body") cc.bodyColor = colorID;
 					else if (partID == "Eyes") cc.eyesColor = colorID;
 					if (colorID.StartsWith(":")) colorID = colorID.Substring(1);
-					cc.descriptionChosen = cc.descriptionChosen.Replace(match.Value, "[Color of '" + partID + "' set to '" + colorID + "']");
+					cc.descriptionChosen = cc.descriptionChosen.Replace(match.Value, nomessages ? "" : "[Color of '" + partID + "' set to '" + colorID + "']");
 				}
 				else
 				{
@@ -307,9 +315,10 @@ namespace ECTD
 					else if (partID == "Body") curColor = cc.bodyColor;
 					else if (partID == "Eyes") curColor = cc.eyesColor;
 					if (curColor.StartsWith(":")) curColor = curColor.Substring(1);
-					cc.descriptionChosen = cc.descriptionChosen.Replace(match.Value, "[Color of '" + partID + "' is '" + curColor + "']");
+					cc.descriptionChosen = cc.descriptionChosen.Replace(match.Value, nomessages ? "" : "[Color of '" + partID + "' is '" + curColor + "']");
 				}
 			}
+			cc.descriptionChosen = cc.descriptionChosen.Trim();
 
 		}
 		public static bool AgentHitbox_GetColorFromString(AgentHitbox __instance, string colorChoice, string bodyPart)
