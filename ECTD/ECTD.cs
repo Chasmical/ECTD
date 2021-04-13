@@ -366,6 +366,7 @@ namespace ECTD
 
 		private static bool DoTheNumber(ref string itemName, ref int itemCount)
 		{
+			if (itemName == null) return false;
 			int index = itemName.IndexOf('+');
 			if (index != -1)
 			{
@@ -375,7 +376,7 @@ namespace ECTD
 					|| string.Equals(numStr, "INFINITY", StringComparison.InvariantCultureIgnoreCase))
 				{
 					itemName = itemName.Substring(0, index);
-					itemCount = -1;
+					itemCount = 999;
 					return true;
 				}
 				else if (int.TryParse(numStr, out int count))
@@ -395,8 +396,8 @@ namespace ECTD
 		}
 		public static void InvDatabase_AddItemPlayerStart(ref string itemName, ref int itemCount) => DoTheNumber(ref itemName, ref itemCount);
 
-		public static bool InvDatabase_SubtractFromItemCount(InvDatabase __instance, int slotNum) => __instance.InvItemList[slotNum].invItemCount != -1;
-		public static bool InvDatabase_SubtractFromItemCount2(InvItem invItem) => invItem.invItemCount != -1;
+		public static bool InvDatabase_SubtractFromItemCount(InvDatabase __instance, int slotNum) => __instance.InvItemList[slotNum].invItemCount != 999;
+		public static bool InvDatabase_SubtractFromItemCount2(InvItem invItem) => invItem.invItemCount != 999;
 
 		public static void NameDB_GetName(NameDB __instance, string myName, ref string __result)
 		{
