@@ -77,6 +77,9 @@
 <br/>Примеры: `++Grenade`, `++PlasmaSword`, `++Hypnotizer2`;
 <br/>ID предметов смотрите тут - [All Item IDs.txt](https://github.com/Abbysssal/ECTD/blob/master/All%20Item%20IDs.txt);
 
+  **Можно ставить количества! *(с v2.7)*:**<br/>
+`++RocketLauncher+Inf`, `++Grenade+Infinity`, `++BananaPeel+Infinite`.
+
 * `--<ID предмета>` - убирает предмет с указанным ID у кастомного персонажа;
 <br/>Примеры: `--Grenade`, `--PlasmaSword`, `--Hypnotizer2`;
 
@@ -112,6 +115,12 @@
 * `::Skin|Hair|Legs|Body|Eyes=<Цвет>` - изменяет цвет кожи/волос/ног/тела/глаз у кастомного персонажа на заданный цвет;
 <br/>Примеры: `::Skin=Purple`, `::Eyes=RobotSkin`, `::Hair=255|12|86|220`, `::Body=23-62`, `::Legs=255,0,255,127`;
 <br/>ID цветов смотрите тут - [All Color IDs.txt](https://github.com/Abbysssal/ECTD/blob/master/All%20Color%20IDs.txt);
+
+## Надоели эти надоедливые сообщения? ***(v2.8)*** ##
+
+Вот как вы можете избавиться от сообщений типа "[Item 'Fud+50' added]":
+
+Найдите файл под названием "ectd-nomessages.cfg" в папке BepInEx/config и напишите в нём "true". (Если нету файла, можете либо зайти в игру, он создастся автоматически, либо создайте сами)
 
 ## Новые мутаторы ##
 Вы можете выбрать новые мутаторы на Базе!

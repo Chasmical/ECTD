@@ -78,6 +78,9 @@ See the [guide in Steam](https://steamcommunity.com/sharedfiles/filedetails/?id=
 <br/>Examples: `++Grenade`, `++PlasmaSword`, `++Hypnotizer2`;
 <br/>See [All Item IDs.txt](https://github.com/Abbysssal/ECTD/blob/master/All%20Item%20IDs.txt);
 
+  **Now you can specify item counts! *(с v2.7)*:**<br/>
+`++RocketLauncher+Inf`, `++Grenade+Infinity`, `++BananaPeel+Infinite`.
+
 * `--<Item ID>` - removes an item with the specified ID from the custom character;
 <br/>Examples: `--Grenade`, `--PlasmaSword`, `--Hypnotizer2`;
 
@@ -113,6 +116,12 @@ See the [guide in Steam](https://steamcommunity.com/sharedfiles/filedetails/?id=
 * `::Skin|Hair|Legs|Body|Eyes=<Color>` - sets the custom character's skin/hair/legs/body/eyes color to the specified color;
 <br/>Examples: `::Skin=Purple`, `::Eyes=RobotSkin`, `::Hair=255|12|86|220`, `::Body=23-62`, `::Legs=255,0,255,127`;
 <br/>See [All Color IDs.txt](https://github.com/Abbysssal/ECTD/blob/master/All%20Color%20IDs.txt);
+
+## Tired of these annoying messages? ***(v2.8)*** ##
+
+Here's how you can remove messages like "[Item 'Fud+50' added]":
+
+Find a file called "ectd-nomessages.cfg" in BepInEx/config and write "true" in it. (if the file doesn't exist, start the game, the file will be created automatically, or create it yourself)
 
 ## New Mutators ##
 You can select new mutators at Home Base!
