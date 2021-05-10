@@ -24,11 +24,11 @@ CourierPackageBroken, BombTrigger (Remote Bomb Trigger), RemoteBomb, MechTransfo
 
 ===== Unimplemented working Items =====
 BalletShoes, Shovel, Teleporter, Chainsaw, FlamingSword, GrenadeKnocker, WarpZoner, PropertyDeed, LaserBlazer, FiveLeafClover,
-SixLeafClover, PowerDrill, PlasmaSword, RubberBulletsMod
+SixLeafClover, PowerDrill, PlasmaSword, RubberBulletsMod, BodyVanisher
 
 ===== Unimplemented not working Items =====
 Flask, GrapplingHook, KeyCard, MagicLamp, MindReaderDevice, Jackhammer, BFG, GuidedMissileLauncher, SniperRifle, Blowtorch,
-KnockerMelee, StickyMine, TripMine, BodyVanisher, ForceField
+KnockerMelee, StickyMine, TripMine, ForceField
 
 ===== Removed Items =====
 MoodRing, VoodooDoll
