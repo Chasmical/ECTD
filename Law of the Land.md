@@ -64,8 +64,6 @@
 
 > Welcome to the Streets of Rogue. __The Mayor has banned all unofficially-sanctioned music and demanded the forfeiture of every non-compliant cassette tape and compact disc__. All that has been saved is a collection of vintage dance music B-sides called "NOW That's What I Hope You Think Is Music," passed around furtively in the shadows by the Resistance. Treat your copy well, for it is all you have left.
 
-## Opinions ##
-
 #### Record of Evidence ####
 
 > I might raise taxes on bacon cheeseburgers.<br/>
@@ -78,9 +76,11 @@
 > - You know, this is the same sort of __ridiculous authoritarian crap that the Mayor pulls__...<br/>
 > - Stop being a wimp, you'll be fine!
 
+#### Home Base Hacker ####
 
+Home Base Hacker can enable **mutators**.
 
-
+Is the entire city some kind of a simulation?
 
 
 
