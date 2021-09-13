@@ -17,6 +17,9 @@
   </a>
 </div>
 
+# RogueLibs v3 does not support ECTD!
+# You'll have to choose between RLv3 mods and ECTD.
+  
 **With ECTD you can:**
 *	Set Strength/Endurance/Accuracy/Speed to any value in range ±2147483647;
 *	Add any items, like Grenades, Plasma Sword or Laser Blazer;
