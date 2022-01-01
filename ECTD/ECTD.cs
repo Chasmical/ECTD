@@ -1,255 +1,103 @@
 ﻿using BepInEx;
-using HarmonyLib;
 using System;
+using System.CodeDom;
+using System.Collections;
 using System.Collections.Generic;
-using System.IO;
-using System.Reflection;
-using System.Runtime.Serialization.Formatters.Binary;
 using System.Text.RegularExpressions;
+using RogueLibsCore;
 using UnityEngine;
+using UnityEngine.UI;
+using System.IO;
+using System.Linq;
+using System.Reflection;
+using System.Reflection.Emit;
+using HarmonyLib;
 
 namespace ECTD
 {
-	[BepInPlugin(pluginGuid, pluginName, pluginVersion)]
+	[BepInPlugin(GUID, Name, Version)]
+	[BepInDependency(RogueLibs.GUID, RogueLibs.CompiledVersion)]
 	public class ECTDPlugin : BaseUnityPlugin
 	{
-		public const string pluginGuid = "abbysssal.streetsofrogue.ectd";
-		public const string pluginName = "ECTD";
-		public const string pluginVersion = "2.8";
+		public const string GUID = "abbysssal.streetsofrogue.ectd3";
+		public const string Name = "ECTD";
+		public const string Version = "3.0.0";
 
-		public Dictionary<int, int> nuggetsDictionary;
-		public string nuggetsPath = Path.Combine(Paths.ManagedPath, "znuggets_big.cfg");
-		public string settingPath = Path.Combine(Paths.ConfigPath, "ectd-nomessages.cfg");
+        private const int infinityNumber = 7654321;
+        private const string infinityString = "∞";
+        private static string configPath;
+        public static bool NoMessages;
 
-		public Harmony harmony;
-
-		public void PrefixAndLog(Type type, string methodName, Type[] types = null, int extra = 0)
-		{
-			try
-			{
-				MethodInfo original = AccessTools.Method(type, methodName, types);
-				string patchName = type.Name + "_" + methodName;
-				if (extra != 0) patchName += extra;
-				MethodInfo patch = AccessTools.Method(typeof(ECTDPatches), patchName);
-				harmony.Patch(original, new HarmonyMethod(patch));
-				Logger.LogInfo(type.Name + "." + methodName + "(..) patched.");
-			}
-			catch (Exception e)
-			{
-				Logger.LogError(type.Name + "." + methodName + "(..) patch failed!");
-				Logger.LogError(e);
-			}
-		}
-		public void PostfixAndLog(Type type, string methodName, Type[] types = null)
-		{
-			try
-			{
-				MethodInfo original = AccessTools.Method(type, methodName, types);
-				MethodInfo patch = AccessTools.Method(typeof(ECTDPatches), type.Name + "_" + methodName);
-				harmony.Patch(original, null, new HarmonyMethod(patch));
-				Logger.LogInfo(type.Name + "." + methodName + "(..) patched.");
-			}
-			catch (Exception e)
-			{
-				Logger.LogError(type.Name + "." + methodName + "(..) patch failed!");
-				Logger.LogError(e);
-			}
-		}
-		public void LoadConfigFile()
-		{
-			try
-			{
-				nuggetsDictionary = new Dictionary<int, int>();
-				if (!File.Exists(nuggetsPath))
-					File.WriteAllText(nuggetsPath, "1:-1\n2:-1\n3:-1\n4:-1\n5:-1");
-				string data = File.ReadAllText(nuggetsPath);
-				string[] lines = data.Split('\n');
-				foreach (string line in lines)
-				{
-					string[] parts = line.Split(':');
-					if (parts.Length != 2) return;
-					if (!int.TryParse(parts[0], out int slot) || !int.TryParse(parts[1], out int nuggets))
-						return;
-					nuggetsDictionary.Add(slot, nuggets);
-				}
-			}
-			catch (Exception e)
-			{
-				Logger.LogError("Error parsing " + nuggetsPath + "!");
-				Logger.LogError(e);
-			}
-
-			SessionDataBig session = GameController.gameController.sessionDataBig;
-			if (session == null)
-			{
-				Logger.LogWarning("Could not read sessionDataBig!");
-				return;
-			}
-
-			if (!nuggetsDictionary.ContainsKey(session.saveSlot))
-				nuggetsDictionary.Add(session.saveSlot, session.nuggets);
-			int ectdNuggets = nuggetsDictionary[session.saveSlot];
-			if (session.nuggets == 99 && ectdNuggets > 99)
-				session.nuggets = ectdNuggets;
-			else if (session.nuggets != ectdNuggets)
-				if (ectdNuggets != -1)
-					session.nuggets = nuggetsDictionary[session.saveSlot] = Mathf.Min(session.nuggets, ectdNuggets);
-				else
-					nuggetsDictionary[session.saveSlot] = session.nuggets;
-
-			SaveNuggets();
-		}
-		public void LoadSettingFile()
-		{
-			try
-			{
-				if (File.Exists(settingPath))
-				{
-					string text = File.ReadAllText(settingPath);
-					ECTDPatches.nomessages = string.Equals(text, "true", StringComparison.InvariantCultureIgnoreCase)
-						|| (string.Equals(text, "false", StringComparison.InvariantCultureIgnoreCase) ? false
-						: throw new InvalidOperationException());
-				}
-				else throw new FileNotFoundException();
-			}
-			catch
-			{
-				Logger.LogWarning($"{Path.GetFileName(settingPath)} does not exist or does not contain valid information!");
-				Logger.LogWarning($"Created a new {Path.GetFileName(settingPath)} file (False).");
-				File.WriteAllText(settingPath, "False");
-			}
-		}
-		public void SaveNuggets()
-		{
-			List<string> data = new List<string>();
-			foreach (KeyValuePair<int, int> pair in nuggetsDictionary)
-				data.Add(pair.Key + ":" + pair.Value);
-			File.WriteAllText(nuggetsPath, string.Join("\n", data.ToArray()));
-			Logger.LogInfo("Saved Nuggets - " + string.Join("|", data.ToArray()) + ".");
-		}
 		public void Start()
-		{
-			ECTDPatches.plugin = this;
+        {
+            configPath = Path.Combine(Paths.ConfigPath, "ectd-nomessages.cfg");
+            NoMessages = File.Exists(configPath);
+            StartCoroutine(CheckingConfig());
 
-			Logger.LogInfo(string.Concat(pluginName, " v", pluginVersion, " (", pluginGuid, ") has started."));
+            RoguePatcher patcher = new RoguePatcher(this);
+            patcher.Prefix(typeof(CharacterCreation), nameof(CharacterCreation.SaveCharacter));
+            patcher.Prefix(typeof(AgentHitbox), nameof(AgentHitbox.GetColorFromString));
 
-			LoadConfigFile();
-			LoadSettingFile();
+            patcher.Prefix(typeof(InvItem), nameof(InvItem.SetupDetails));
+            patcher.Prefix(typeof(InvDatabase), nameof(InvDatabase.AddItemPlayerStart));
+            patcher.Prefix(typeof(InvDatabase), nameof(InvDatabase.SubtractFromItemCount), nameof(InvDatabase_SubtractFromItemCount),
+                           new Type[] { typeof(int), typeof(int), typeof(bool) });
+            patcher.Prefix(typeof(InvDatabase), nameof(InvDatabase.SubtractFromItemCount), nameof(InvDatabase_SubtractFromItemCount2),
+                           new Type[] { typeof(InvItem), typeof(int), typeof(bool) });
 
-			harmony = new Harmony(pluginGuid);
+            const string replaceCounts = nameof(ReplaceCounts);
 
-			// ECTD Classic
-			PrefixAndLog(typeof(CharacterCreation), "LoadCharacter2");
-			PrefixAndLog(typeof(CharacterCreation), "SaveCharacter");
-			PrefixAndLog(typeof(AgentHitbox), "GetColorFromString");
+            patcher.Transpiler(typeof(CharacterSelect), nameof(CharacterSelect.SetupSlotAgent), replaceCounts);
+            patcher.Transpiler(typeof(InvSlot), nameof(InvSlot.UpdateInvSlot), replaceCounts);
+            patcher.Transpiler(typeof(CharacterCreation), nameof(CharacterCreation.CreatePointTallyText), replaceCounts);
+            patcher.Transpiler(typeof(WeaponSelectImage), nameof(WeaponSelectImage.UpdateWeaponSelectImage), replaceCounts);
+            patcher.Transpiler(typeof(WeaponSlot), "Update", replaceCounts);
+            patcher.Transpiler(typeof(EquippedItemSlot), nameof(EquippedItemSlot.LateUpdateEquippedItemSlot), replaceCounts);
+            patcher.Transpiler(typeof(InvItem), nameof(InvItem.ShowPickingUpText), replaceCounts);
+        }
+        private static IEnumerator CheckingConfig()
+        {
+            while (true)
+            {
+                NoMessages = File.Exists(configPath);
+                yield return new WaitForSecondsRealtime(5f);
+            }
+        }
 
-			// ECTD-NoLimitNuggets
-			PrefixAndLog(typeof(Unlocks), "AddNuggets");
-
-			PrefixAndLog(typeof(InvItem), "SetupDetails");
-			PrefixAndLog(typeof(InvDatabase), "AddItemPlayerStart");
-
-			PrefixAndLog(typeof(InvDatabase), "SubtractFromItemCount", new Type[] { typeof(int), typeof(int), typeof(bool) });
-			PrefixAndLog(typeof(InvDatabase), "SubtractFromItemCount", new Type[] { typeof(InvItem), typeof(int), typeof(bool) }, 2);
-
-			// ECTD Localization
-			PostfixAndLog(typeof(NameDB), "GetName");
-			// ECTD Mutators
-			PostfixAndLog(typeof(ScrollingMenu), "SortUnlocks");
-
-			Logger.LogInfo("All patches were applied.");
-
-		}
-	}
-	public static class ECTDPatches
-	{
-		public static ECTDPlugin plugin;
-		public static bool nomessages;
-
-		public static void CharacterCreation_LoadCharacter2(CharacterCreation __instance, string characterName, bool secondTry, bool foundFile, object mySaveObject)
-		{
-			CharacterCreation cc = __instance;
-			#region part from original code
-			cc.gc = GameController.gameController;
-			string str = Application.persistentDataPath;
-			if ((!cc.gc.consoleVersion || cc.gc.fakeConsole) && cc.gc.usingMyDocuments && !cc.gc.macVersion && !cc.gc.linuxVersion)
-				str = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "/" + cc.gc.dataFolder;
-			string text = string.Concat(new string[]
-			{
-				"/CloudData/Characters/",
-				characterName,
-				"/",
-				characterName,
-				".dat"
-			});
-			if (secondTry)
-			{
-				text = "/BackupData/Backup" + characterName + "2.dat";
-			}
-			SaveCharacterData saveCharacterData = null;
-			cc.loadedCharacter = true;
-			if (foundFile)
-			{
-				FileStream fileStream = null;
-				try
-				{
-					if (cc.gc.consoleVersion && !cc.gc.fakeConsole)
-						saveCharacterData = (SaveCharacterData)mySaveObject;
-					else
-					{
-						BinaryFormatter binaryFormatter = new BinaryFormatter();
-						fileStream = File.Open(str + text, FileMode.Open);
-						saveCharacterData = (SaveCharacterData)binaryFormatter.Deserialize(fileStream);
-						fileStream.Close();
-					}
-				}
-				catch
-				{
-					try
-					{
-						fileStream?.Close();
-					}
-					catch
-					{
-					}
-				}
-			}
-			#endregion
-		}
-		public static void CharacterCreation_SaveCharacter(CharacterCreation __instance)
+        public static void CharacterCreation_SaveCharacter(CharacterCreation __instance)
 		{
 			CharacterCreation cc = __instance;
 
 			foreach (Match match in Regex.Matches(cc.descriptionChosen, "\\+\\+(.+)", RegexOptions.ECMAScript))
 			{
-				string itemID = match.Groups[1].Value;
-				cc.itemsChosen.Add(new Unlock(itemID, "Item", true));
-				cc.descriptionChosen = cc.descriptionChosen.Replace(match.Value, nomessages ? "" : "[Item '" + itemID + "' added]");
+				string itemId = match.Groups[1].Value;
+				cc.itemsChosen.Add(new Unlock(itemId, "Item", true));
+				cc.descriptionChosen = cc.descriptionChosen.Replace(match.Value, NoMessages ? string.Empty : $"[Item '{itemId}' added]");
 			}
 			foreach (Match match in Regex.Matches(cc.descriptionChosen, "\\-\\-(.+)", RegexOptions.ECMAScript))
 			{
-				string itemID = match.Groups[1].Value.ToLower();
-				int index = cc.itemsChosen.FindIndex(item => item.unlockName.ToLower() == itemID);
-				if (index != -1)
-				{
-					cc.itemsChosen.RemoveAt(index);
-					cc.descriptionChosen = cc.descriptionChosen.Replace(match.Value, nomessages ? "" : "[Item '" + itemID + "' removed]");
+				string itemId = match.Groups[1].Value.ToLower();
+				int index = cc.itemsChosen.FindIndex(item => item.unlockName.ToLower() == itemId);
+                if (index != -1)
+                {
+                    cc.itemsChosen.RemoveAt(index);
+                    cc.descriptionChosen = cc.descriptionChosen.Replace(match.Value, NoMessages ? string.Empty : $"[Item '{itemId}' removed]");
 				}
 			}
 			foreach (Match match in Regex.Matches(cc.descriptionChosen, "\\*\\*(.+)", RegexOptions.ECMAScript))
 			{
-				string traitID = match.Groups[1].Value;
-				cc.traitsChosen.Add(new Unlock(traitID, "Trait", true));
-				cc.descriptionChosen = cc.descriptionChosen.Replace(match.Value, nomessages ? "" : "[Trait '" + traitID + "' added]");
+				string traitId = match.Groups[1].Value;
+				cc.traitsChosen.Add(new Unlock(traitId, "Trait", true));
+				cc.descriptionChosen = cc.descriptionChosen.Replace(match.Value, NoMessages ? string.Empty : $"[Trait '{traitId}' added]");
 			}
 			foreach (Match match in Regex.Matches(cc.descriptionChosen, "\\/\\/(.+)", RegexOptions.ECMAScript))
 			{
-				string traitID = match.Groups[1].Value;
-				int index = cc.traitsChosen.FindIndex(item => item.unlockName == traitID);
+				string traitId = match.Groups[1].Value;
+				int index = cc.traitsChosen.FindIndex(item => item.unlockName == traitId);
 				if (index != -1)
 				{
 					cc.traitsChosen.RemoveAt(index);
-					cc.descriptionChosen = cc.descriptionChosen.Replace(match.Value, nomessages ? "" : "[Trait '" + traitID + "' removed]");
+					cc.descriptionChosen = cc.descriptionChosen.Replace(match.Value, NoMessages ? string.Empty : $"[Trait '{traitId}' removed]");
 				}
 			}
 			foreach (Match match in Regex.Matches(cc.descriptionChosen, "\\!\\!items", RegexOptions.ECMAScript))
@@ -270,168 +118,162 @@ namespace ECTD
 			}
 			foreach (Match match in Regex.Matches(cc.descriptionChosen, "\\^\\^(Strength|Endurance|Accuracy|Speed|Str|End|Acc|Spd)\\=([0-9-]+)", RegexOptions.ECMAScript))
 			{
-				string statID = match.Groups[1].Value;
+				string statId = match.Groups[1].Value;
 				if (int.TryParse(match.Groups[2].Value, out int value))
 				{
-					cc.descriptionChosen = cc.descriptionChosen.Replace(match.Value, nomessages ? "" : "['" + statID + "' set to '" + value + "']");
-					if (statID == "Strength" || statID == "Str")
+					cc.descriptionChosen = cc.descriptionChosen.Replace(match.Value, NoMessages ? string.Empty : $"['{statId}' set to '{value}']");
+					if (statId == "Strength" || statId == "Str")
 						cc.strength = value - 1;
-					else if (statID == "Endurance" || statID == "End")
+					else if (statId == "Endurance" || statId == "End")
 						cc.endurance = value - 1;
-					else if (statID == "Accuracy" || statID == "Acc")
+					else if (statId == "Accuracy" || statId == "Acc")
 						cc.accuracy = value - 1;
-					else if (statID == "Speed" || statID == "Spd")
+					else if (statId == "Speed" || statId == "Spd")
 						cc.speed = value - 1;
 				}
 			}
 			foreach (Match match in Regex.Matches(cc.descriptionChosen, "\\%\\%(.+)", RegexOptions.ECMAScript))
 			{
-				string abilityID = match.Groups[1].Value;
-				cc.abilityChosen = abilityID;
-				cc.descriptionChosen = cc.descriptionChosen.Replace(match.Value, nomessages ? "" : "[Ability set to '" + abilityID + "']");
+				string abilityId = match.Groups[1].Value;
+				cc.abilityChosen = abilityId;
+				cc.descriptionChosen = cc.descriptionChosen.Replace(match.Value, NoMessages ? string.Empty : $"[Ability set to '{abilityId}']");
 			}
 			foreach (Match match in Regex.Matches(cc.descriptionChosen, "\\:\\:(Skin|Hair|Legs|Body|Eyes)(\\=.+)?", RegexOptions.ECMAScript))
 			{
-				string partID = match.Groups[1].Value;
+				string partId = match.Groups[1].Value;
 				if (match.Groups[2].Success)
 				{
-					string colorID = match.Groups[2].Value.Substring(1);
+					string colorId = match.Groups[2].Value.Substring(1);
 					if (match.Groups[2].Value.IndexOfAny(new char[] { '-', '.', '|', ':', '_', ',', ';' }) != -1)
-						colorID = ":" + colorID;
-					if (partID == "Skin") cc.skinColor = colorID;
-					else if (partID == "Hair") cc.hairColor = colorID;
-					else if (partID == "Legs") cc.legsColor = colorID;
-					else if (partID == "Body") cc.bodyColor = colorID;
-					else if (partID == "Eyes") cc.eyesColor = colorID;
-					if (colorID.StartsWith(":")) colorID = colorID.Substring(1);
-					cc.descriptionChosen = cc.descriptionChosen.Replace(match.Value, nomessages ? "" : "[Color of '" + partID + "' set to '" + colorID + "']");
+						colorId = ":" + colorId;
+					if (partId == "Skin") cc.skinColor = colorId;
+					else if (partId == "Hair") cc.hairColor = colorId;
+					else if (partId == "Legs") cc.legsColor = colorId;
+					else if (partId == "Body") cc.bodyColor = colorId;
+					else if (partId == "Eyes") cc.eyesColor = colorId;
+					if (colorId.StartsWith(":", StringComparison.Ordinal)) colorId = colorId.Substring(1);
+					cc.descriptionChosen = cc.descriptionChosen.Replace(match.Value, NoMessages ? string.Empty : $"[Color of '{partId}' set to '{colorId}']");
 				}
 				else
 				{
 					string curColor = "???";
-					if (partID == "Skin") curColor = cc.skinColor;
-					else if (partID == "Hair") curColor = cc.hairColor;
-					else if (partID == "Legs") curColor = cc.legsColor;
-					else if (partID == "Body") curColor = cc.bodyColor;
-					else if (partID == "Eyes") curColor = cc.eyesColor;
-					if (curColor.StartsWith(":")) curColor = curColor.Substring(1);
-					cc.descriptionChosen = cc.descriptionChosen.Replace(match.Value, nomessages ? "" : "[Color of '" + partID + "' is '" + curColor + "']");
+					if (partId == "Skin") curColor = cc.skinColor;
+					else if (partId == "Hair") curColor = cc.hairColor;
+					else if (partId == "Legs") curColor = cc.legsColor;
+					else if (partId == "Body") curColor = cc.bodyColor;
+					else if (partId == "Eyes") curColor = cc.eyesColor;
+					if (curColor.StartsWith(":", StringComparison.Ordinal)) curColor = curColor.Substring(1);
+					cc.descriptionChosen = cc.descriptionChosen.Replace(match.Value, NoMessages ? string.Empty : $"[Color of '{partId}' is '{curColor}']");
 				}
 			}
 			cc.descriptionChosen = cc.descriptionChosen.Trim();
 
 		}
-		public static bool AgentHitbox_GetColorFromString(AgentHitbox __instance, string colorChoice, string bodyPart)
-		{
-			AgentHitbox ah = __instance;
-			Color32 color = Color.white;
-			bool noncustom = false;
-			switch (colorChoice)
-			{
-				case "Clear":
-					color = AgentHitbox.skinClear;
-					break;
-				default:
-					noncustom = true;
-					break;
-			}
-			if (colorChoice.StartsWith(":"))
-			{
-				color = new Color32(0, 0, 0, 255);
-				noncustom = false;
-				string[] splitted = colorChoice.Substring(1).Split(new char[] { '-', '.', '|', ':', '_', ',', ';' });
-				if (splitted.Length >= 1 && int.TryParse(splitted[0], out int red))
-					color.r = (byte)Mathf.Clamp(red, 0, 255);
-				if (splitted.Length >= 2 && int.TryParse(splitted[1], out int green))
-					color.g = (byte)Mathf.Clamp(green, 0, 255);
-				if (splitted.Length >= 3 && int.TryParse(splitted[2], out int blue))
-					color.b = (byte)Mathf.Clamp(blue, 0, 255);
-				if (splitted.Length >= 4 && int.TryParse(splitted[3], out int aaa))
-					color.a = (byte)Mathf.Clamp(aaa, 0, 255);
-			}
-			if (noncustom) return true;
-			if (bodyPart == "Skin") ah.skinColor = color;
-			else if (bodyPart == "Hair") ah.hairColor = color;
-			else if (bodyPart == "Legs") ah.legsColor = color;
-			else if (bodyPart == "Body") ah.bodyColor = color;
-			else if (bodyPart == "Eyes") ah.eyesColor = color;
-			return false;
-		}
+        public static bool AgentHitbox_GetColorFromString(AgentHitbox __instance, string colorChoice, string bodyPart)
+        {
+            AgentHitbox ah = __instance;
+            Color32 color = Color.white;
+            bool isCustom = true;
+            switch (colorChoice)
+            {
+                case "Clear":
+                    color = AgentHitbox.skinClear;
+                    break;
+                default:
+                    isCustom = false;
+                    break;
+            }
+            if (colorChoice.StartsWith(":", StringComparison.Ordinal))
+            {
+                color = new Color32(0, 0, 0, 255);
+                isCustom = true;
+                string[] split = colorChoice.Substring(1).Split('-', '.', '|', ':', '_', ',', ';');
+                if (split.Length >= 1 && int.TryParse(split[0], out int red))
+                    color.r = (byte)Mathf.Clamp(red, 0, 255);
+                if (split.Length >= 2 && int.TryParse(split[1], out int green))
+                    color.g = (byte)Mathf.Clamp(green, 0, 255);
+                if (split.Length >= 3 && int.TryParse(split[2], out int blue))
+                    color.b = (byte)Mathf.Clamp(blue, 0, 255);
+                if (split.Length >= 4 && int.TryParse(split[3], out int aaa))
+                    color.a = (byte)Mathf.Clamp(aaa, 0, 255);
+            }
+            if (!isCustom) return true;
+            if (bodyPart == "Skin") ah.skinColor = color;
+            else if (bodyPart == "Hair") ah.hairColor = color;
+            else if (bodyPart == "Legs") ah.legsColor = color;
+            else if (bodyPart == "Body") ah.bodyColor = color;
+            else if (bodyPart == "Eyes") ah.eyesColor = color;
+            return false;
+        }
 
-		public static bool Unlocks_AddNuggets(int numNuggets)
-		{
-			SessionDataBig session = GameController.gameController.sessionDataBig;
+        private static bool DoTheNumber(ref string itemName, ref int itemCount)
+        {
+            if (itemName == null) return false;
+            int index = itemName.IndexOf('+');
+            if (index != -1)
+            {
+                string numStr = itemName.Substring(index + 1);
+                if (string.Equals(numStr, "INF", StringComparison.InvariantCultureIgnoreCase)
+                 || string.Equals(numStr, "INFINITE", StringComparison.InvariantCultureIgnoreCase)
+                 || string.Equals(numStr, "INFINITY", StringComparison.InvariantCultureIgnoreCase))
+                {
+                    itemName = itemName.Substring(0, index);
+                    itemCount = infinityNumber;
+                    return true;
+                }
+                else if (int.TryParse(numStr, out int count))
+                {
+                    itemName = itemName.Substring(0, index);
+                    itemCount = count;
+                    return true;
+                }
+            }
+            return false;
+        }
 
-			int previous = session.nuggets;
-			session.nuggets += numNuggets;
-			if (!GameController.gameController.challenges.Contains("ECTD-NoLimitNuggets") && session.nuggets > 99 && previous <= 99)
-				session.nuggets = 99;
-			plugin.nuggetsDictionary[session.saveSlot] = session.nuggets;
-			plugin.SaveNuggets();
+        public static void InvItem_SetupDetails(InvItem __instance)
+        {
+            if (DoTheNumber(ref __instance.invItemName, ref __instance.invItemCount))
+                __instance.rewardCount = __instance.invItemCount;
+        }
+        public static void InvDatabase_AddItemPlayerStart(ref string itemName, ref int itemCount)
+            => DoTheNumber(ref itemName, ref itemCount);
+        public static bool InvDatabase_SubtractFromItemCount(InvDatabase __instance, int slotNum)
+            => __instance.InvItemList[slotNum].invItemCount != infinityNumber;
+        public static bool InvDatabase_SubtractFromItemCount2(InvItem invItem)
+            => invItem.invItemCount != infinityNumber;
 
-			GameController.gameController.unlocks.SaveUnlockData(true);
-			return false;
-		}
+        private static IEnumerable<CodeInstruction> ReplaceCounts(IEnumerable<CodeInstruction> originalCode)
+        {
+            FieldInfo invItemCountField = AccessTools.Field(typeof(InvItem), nameof(InvItem.invItemCount));
+            MethodInfo intToStringMethod = AccessTools.Method(typeof(int), nameof(int.ToString), Type.EmptyTypes);
+            MethodInfo overrideMethod = AccessTools.Method(typeof(ECTDPlugin), nameof(OverrideToString));
 
-		private static bool DoTheNumber(ref string itemName, ref int itemCount)
-		{
-			if (itemName == null) return false;
-			int index = itemName.IndexOf('+');
-			if (index != -1)
-			{
-				string numStr = itemName.Substring(index + 1);
-				if (string.Equals(numStr, "INF", StringComparison.InvariantCultureIgnoreCase)
-					|| string.Equals(numStr, "INFINITE", StringComparison.InvariantCultureIgnoreCase)
-					|| string.Equals(numStr, "INFINITY", StringComparison.InvariantCultureIgnoreCase))
-				{
-					itemName = itemName.Substring(0, index);
-					itemCount = 999;
-					return true;
-				}
-				else if (int.TryParse(numStr, out int count))
-				{
-					itemName = itemName.Substring(0, index);
-					itemCount = count;
-					return true;
-				}
-			}
-			return false;
-		}
+            List<CodeInstruction> code = originalCode.ToList();
+            for (int i = 0; i < code.Count - 1; i++)
+            {
+                CodeInstruction current = code[i];
+                CodeInstruction next = code[i + 1];
+                if (current.opcode == OpCodes.Ldflda && next.opcode == OpCodes.Call
+                                                     && (FieldInfo)current.operand == invItemCountField
+                                                     && (MethodInfo)next.operand == intToStringMethod)
+                {
+                    code.RemoveRange(i, 2);
+                    code.Insert(i, new CodeInstruction(OpCodes.Call, overrideMethod));
+                    i--;
+                }
+				else if (current.opcode == OpCodes.Ldfld && next.opcode == OpCodes.Box
+                                                         && (FieldInfo)current.operand == invItemCountField)
+                {
+                    code.RemoveRange(i, 2);
+                    code.Insert(i, new CodeInstruction(OpCodes.Call, overrideMethod));
+                    i--;
+                }
+            }
+            return code;
+        }
+        private static string OverrideToString(InvItem item)
+            => item.invItemCount == infinityNumber ? infinityString : item.invItemCount.ToString();
 
-		public static void InvItem_SetupDetails(InvItem __instance)
-		{
-			if (DoTheNumber(ref __instance.invItemName, ref __instance.invItemCount))
-				__instance.rewardCount = __instance.invItemCount;
-		}
-		public static void InvDatabase_AddItemPlayerStart(ref string itemName, ref int itemCount) => DoTheNumber(ref itemName, ref itemCount);
-
-		public static bool InvDatabase_SubtractFromItemCount(InvDatabase __instance, int slotNum) => __instance.InvItemList[slotNum].invItemCount != 999;
-		public static bool InvDatabase_SubtractFromItemCount2(InvItem invItem) => invItem.invItemCount != 999;
-
-		public static void NameDB_GetName(NameDB __instance, string myName, ref string __result)
-		{
-			int count = 0;
-			DoTheNumber(ref myName, ref count);
-			// "english", "schinese", "german", "spanish", "brazilian", "russian", "french", "koreana"
-			string language = __instance.language;
-
-			if (myName == "ECTD-NoLimitNuggets")
-				__result = language == "russian"
-					? "[ECTD] Безлимитные наггетсы"
-					: "[ECTD] No Limit Nuggets";
-			else if (myName == "D_ECTD-NoLimitNuggets")
-				__result = language == "russian"
-					? "Если включен, позволяет вам набирать более 99 наггетсов. Если выключен, НЕ сбрасывает количество наггетсов."
-					: "If enabled, allows you to get more than 99 nuggets. If disabled, does NOT reset the nuggets amount.";
-		}
-		public static void ScrollingMenu_SortUnlocks(ScrollingMenu __instance, string unlockType)
-		{
-			List<Unlock> listUnlocks = (List<Unlock>)AccessTools.Field(typeof(ScrollingMenu), "listUnlocks").GetValue(__instance);
-			if (unlockType == "Challenge")
-			{
-				listUnlocks.Insert(1, new Unlock("ECTD-NoLimitNuggets", "Challenge", true));
-				__instance.numButtons++;
-			}
-		}
-	}
+    }
 }
