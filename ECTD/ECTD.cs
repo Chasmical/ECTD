@@ -1,12 +1,10 @@
 ﻿using BepInEx;
 using System;
-using System.CodeDom;
 using System.Collections;
 using System.Collections.Generic;
 using System.Text.RegularExpressions;
 using RogueLibsCore;
 using UnityEngine;
-using UnityEngine.UI;
 using System.IO;
 using System.Linq;
 using System.Reflection;
@@ -15,20 +13,20 @@ using HarmonyLib;
 
 namespace ECTD
 {
-	[BepInPlugin(GUID, Name, Version)]
-	[BepInDependency(RogueLibs.GUID, RogueLibs.CompiledVersion)]
-	public class ECTDPlugin : BaseUnityPlugin
-	{
-		public const string GUID = "abbysssal.streetsofrogue.ectd3";
-		public const string Name = "ECTD";
-		public const string Version = "3.0.0";
+    [BepInPlugin(GUID, Name, Version)]
+    [BepInDependency(RogueLibs.GUID, RogueLibs.CompiledVersion)]
+    public class ECTDPlugin : BaseUnityPlugin
+    {
+        public const string GUID = "abbysssal.streetsofrogue.ectd3";
+        public const string Name = "ECTD";
+        public const string Version = "3.0.0";
 
         private const int infinityNumber = 7654321;
         private const string infinityString = "∞";
         private static string configPath;
         public static bool NoMessages;
 
-		public void Start()
+        public void Start()
         {
             configPath = Path.Combine(Paths.ConfigPath, "ectd-nomessages.cfg");
             NoMessages = File.Exists(configPath);
@@ -65,110 +63,110 @@ namespace ECTD
         }
 
         public static void CharacterCreation_SaveCharacter(CharacterCreation __instance)
-		{
-			CharacterCreation cc = __instance;
+        {
+            CharacterCreation cc = __instance;
 
-			foreach (Match match in Regex.Matches(cc.descriptionChosen, "\\+\\+(.+)", RegexOptions.ECMAScript))
-			{
-				string itemId = match.Groups[1].Value;
-				cc.itemsChosen.Add(new Unlock(itemId, "Item", true));
-				cc.descriptionChosen = cc.descriptionChosen.Replace(match.Value, NoMessages ? string.Empty : $"[Item '{itemId}' added]");
-			}
-			foreach (Match match in Regex.Matches(cc.descriptionChosen, "\\-\\-(.+)", RegexOptions.ECMAScript))
-			{
-				string itemId = match.Groups[1].Value.ToLower();
-				int index = cc.itemsChosen.FindIndex(item => item.unlockName.ToLower() == itemId);
+            foreach (Match match in Regex.Matches(cc.descriptionChosen, "\\+\\+(.+)", RegexOptions.ECMAScript))
+            {
+                string itemId = match.Groups[1].Value;
+                cc.itemsChosen.Add(new Unlock(itemId, "Item", true));
+                cc.descriptionChosen = cc.descriptionChosen.Replace(match.Value, NoMessages ? string.Empty : $"[Item '{itemId}' added]");
+            }
+            foreach (Match match in Regex.Matches(cc.descriptionChosen, "\\-\\-(.+)", RegexOptions.ECMAScript))
+            {
+                string itemId = match.Groups[1].Value.ToLower();
+                int index = cc.itemsChosen.FindIndex(item => item.unlockName.ToLower() == itemId);
                 if (index != -1)
                 {
                     cc.itemsChosen.RemoveAt(index);
                     cc.descriptionChosen = cc.descriptionChosen.Replace(match.Value, NoMessages ? string.Empty : $"[Item '{itemId}' removed]");
-				}
-			}
-			foreach (Match match in Regex.Matches(cc.descriptionChosen, "\\*\\*(.+)", RegexOptions.ECMAScript))
-			{
-				string traitId = match.Groups[1].Value;
-				cc.traitsChosen.Add(new Unlock(traitId, "Trait", true));
-				cc.descriptionChosen = cc.descriptionChosen.Replace(match.Value, NoMessages ? string.Empty : $"[Trait '{traitId}' added]");
-			}
-			foreach (Match match in Regex.Matches(cc.descriptionChosen, "\\/\\/(.+)", RegexOptions.ECMAScript))
-			{
-				string traitId = match.Groups[1].Value;
-				int index = cc.traitsChosen.FindIndex(item => item.unlockName == traitId);
-				if (index != -1)
-				{
-					cc.traitsChosen.RemoveAt(index);
-					cc.descriptionChosen = cc.descriptionChosen.Replace(match.Value, NoMessages ? string.Empty : $"[Trait '{traitId}' removed]");
-				}
-			}
-			foreach (Match match in Regex.Matches(cc.descriptionChosen, "\\!\\!items", RegexOptions.ECMAScript))
-			{
-				List<string> items = new List<string>();
-				foreach (Unlock unlock in cc.itemsChosen)
-					items.Add(unlock.unlockName);
-				string txtList = "[" + string.Join(", ", items.ToArray()) + "]";
-				cc.descriptionChosen = cc.descriptionChosen.Replace(match.Value, txtList);
-			}
-			foreach (Match match in Regex.Matches(cc.descriptionChosen, "\\!\\!traits", RegexOptions.ECMAScript))
-			{
-				List<string> traits = new List<string>();
-				foreach (Unlock unlock in cc.traitsChosen)
-					traits.Add(unlock.unlockName);
-				string txtList = "[" + string.Join(", ", traits.ToArray()) + "]";
-				cc.descriptionChosen = cc.descriptionChosen.Replace(match.Value, txtList);
-			}
-			foreach (Match match in Regex.Matches(cc.descriptionChosen, "\\^\\^(Strength|Endurance|Accuracy|Speed|Str|End|Acc|Spd)\\=([0-9-]+)", RegexOptions.ECMAScript))
-			{
-				string statId = match.Groups[1].Value;
-				if (int.TryParse(match.Groups[2].Value, out int value))
-				{
-					cc.descriptionChosen = cc.descriptionChosen.Replace(match.Value, NoMessages ? string.Empty : $"['{statId}' set to '{value}']");
-					if (statId == "Strength" || statId == "Str")
-						cc.strength = value - 1;
-					else if (statId == "Endurance" || statId == "End")
-						cc.endurance = value - 1;
-					else if (statId == "Accuracy" || statId == "Acc")
-						cc.accuracy = value - 1;
-					else if (statId == "Speed" || statId == "Spd")
-						cc.speed = value - 1;
-				}
-			}
-			foreach (Match match in Regex.Matches(cc.descriptionChosen, "\\%\\%(.+)", RegexOptions.ECMAScript))
-			{
-				string abilityId = match.Groups[1].Value;
-				cc.abilityChosen = abilityId;
-				cc.descriptionChosen = cc.descriptionChosen.Replace(match.Value, NoMessages ? string.Empty : $"[Ability set to '{abilityId}']");
-			}
-			foreach (Match match in Regex.Matches(cc.descriptionChosen, "\\:\\:(Skin|Hair|Legs|Body|Eyes)(\\=.+)?", RegexOptions.ECMAScript))
-			{
-				string partId = match.Groups[1].Value;
-				if (match.Groups[2].Success)
-				{
-					string colorId = match.Groups[2].Value.Substring(1);
-					if (match.Groups[2].Value.IndexOfAny(new char[] { '-', '.', '|', ':', '_', ',', ';' }) != -1)
-						colorId = ":" + colorId;
-					if (partId == "Skin") cc.skinColor = colorId;
-					else if (partId == "Hair") cc.hairColor = colorId;
-					else if (partId == "Legs") cc.legsColor = colorId;
-					else if (partId == "Body") cc.bodyColor = colorId;
-					else if (partId == "Eyes") cc.eyesColor = colorId;
-					if (colorId.StartsWith(":", StringComparison.Ordinal)) colorId = colorId.Substring(1);
-					cc.descriptionChosen = cc.descriptionChosen.Replace(match.Value, NoMessages ? string.Empty : $"[Color of '{partId}' set to '{colorId}']");
-				}
-				else
-				{
-					string curColor = "???";
-					if (partId == "Skin") curColor = cc.skinColor;
-					else if (partId == "Hair") curColor = cc.hairColor;
-					else if (partId == "Legs") curColor = cc.legsColor;
-					else if (partId == "Body") curColor = cc.bodyColor;
-					else if (partId == "Eyes") curColor = cc.eyesColor;
-					if (curColor.StartsWith(":", StringComparison.Ordinal)) curColor = curColor.Substring(1);
-					cc.descriptionChosen = cc.descriptionChosen.Replace(match.Value, NoMessages ? string.Empty : $"[Color of '{partId}' is '{curColor}']");
-				}
-			}
-			cc.descriptionChosen = cc.descriptionChosen.Trim();
+                }
+            }
+            foreach (Match match in Regex.Matches(cc.descriptionChosen, "\\*\\*(.+)", RegexOptions.ECMAScript))
+            {
+                string traitId = match.Groups[1].Value;
+                cc.traitsChosen.Add(new Unlock(traitId, "Trait", true));
+                cc.descriptionChosen = cc.descriptionChosen.Replace(match.Value, NoMessages ? string.Empty : $"[Trait '{traitId}' added]");
+            }
+            foreach (Match match in Regex.Matches(cc.descriptionChosen, "\\/\\/(.+)", RegexOptions.ECMAScript))
+            {
+                string traitId = match.Groups[1].Value;
+                int index = cc.traitsChosen.FindIndex(item => item.unlockName == traitId);
+                if (index != -1)
+                {
+                    cc.traitsChosen.RemoveAt(index);
+                    cc.descriptionChosen = cc.descriptionChosen.Replace(match.Value, NoMessages ? string.Empty : $"[Trait '{traitId}' removed]");
+                }
+            }
+            foreach (Match match in Regex.Matches(cc.descriptionChosen, "\\!\\!items", RegexOptions.ECMAScript))
+            {
+                List<string> items = new List<string>();
+                foreach (Unlock unlock in cc.itemsChosen)
+                    items.Add(unlock.unlockName);
+                string txtList = "[" + string.Join(", ", items.ToArray()) + "]";
+                cc.descriptionChosen = cc.descriptionChosen.Replace(match.Value, txtList);
+            }
+            foreach (Match match in Regex.Matches(cc.descriptionChosen, "\\!\\!traits", RegexOptions.ECMAScript))
+            {
+                List<string> traits = new List<string>();
+                foreach (Unlock unlock in cc.traitsChosen)
+                    traits.Add(unlock.unlockName);
+                string txtList = "[" + string.Join(", ", traits.ToArray()) + "]";
+                cc.descriptionChosen = cc.descriptionChosen.Replace(match.Value, txtList);
+            }
+            foreach (Match match in Regex.Matches(cc.descriptionChosen, "\\^\\^(Strength|Endurance|Accuracy|Speed|Str|End|Acc|Spd)\\=([0-9-]+)", RegexOptions.ECMAScript))
+            {
+                string statId = match.Groups[1].Value;
+                if (int.TryParse(match.Groups[2].Value, out int value))
+                {
+                    cc.descriptionChosen = cc.descriptionChosen.Replace(match.Value, NoMessages ? string.Empty : $"['{statId}' set to '{value}']");
+                    if (statId == "Strength" || statId == "Str")
+                        cc.strength = value - 1;
+                    else if (statId == "Endurance" || statId == "End")
+                        cc.endurance = value - 1;
+                    else if (statId == "Accuracy" || statId == "Acc")
+                        cc.accuracy = value - 1;
+                    else if (statId == "Speed" || statId == "Spd")
+                        cc.speed = value - 1;
+                }
+            }
+            foreach (Match match in Regex.Matches(cc.descriptionChosen, "\\%\\%(.+)", RegexOptions.ECMAScript))
+            {
+                string abilityId = match.Groups[1].Value;
+                cc.abilityChosen = abilityId;
+                cc.descriptionChosen = cc.descriptionChosen.Replace(match.Value, NoMessages ? string.Empty : $"[Ability set to '{abilityId}']");
+            }
+            foreach (Match match in Regex.Matches(cc.descriptionChosen, "\\:\\:(Skin|Hair|Legs|Body|Eyes)(\\=.+)?", RegexOptions.ECMAScript))
+            {
+                string partId = match.Groups[1].Value;
+                if (match.Groups[2].Success)
+                {
+                    string colorId = match.Groups[2].Value.Substring(1);
+                    if (match.Groups[2].Value.IndexOfAny(new char[] { '-', '.', '|', ':', '_', ',', ';' }) != -1)
+                        colorId = ":" + colorId;
+                    if (partId == "Skin") cc.skinColor = colorId;
+                    else if (partId == "Hair") cc.hairColor = colorId;
+                    else if (partId == "Legs") cc.legsColor = colorId;
+                    else if (partId == "Body") cc.bodyColor = colorId;
+                    else if (partId == "Eyes") cc.eyesColor = colorId;
+                    if (colorId.StartsWith(":", StringComparison.Ordinal)) colorId = colorId.Substring(1);
+                    cc.descriptionChosen = cc.descriptionChosen.Replace(match.Value, NoMessages ? string.Empty : $"[Color of '{partId}' set to '{colorId}']");
+                }
+                else
+                {
+                    string curColor = "???";
+                    if (partId == "Skin") curColor = cc.skinColor;
+                    else if (partId == "Hair") curColor = cc.hairColor;
+                    else if (partId == "Legs") curColor = cc.legsColor;
+                    else if (partId == "Body") curColor = cc.bodyColor;
+                    else if (partId == "Eyes") curColor = cc.eyesColor;
+                    if (curColor.StartsWith(":", StringComparison.Ordinal)) curColor = curColor.Substring(1);
+                    cc.descriptionChosen = cc.descriptionChosen.Replace(match.Value, NoMessages ? string.Empty : $"[Color of '{partId}' is '{curColor}']");
+                }
+            }
+            cc.descriptionChosen = cc.descriptionChosen.Trim();
 
-		}
+        }
         public static bool AgentHitbox_GetColorFromString(AgentHitbox __instance, string colorChoice, string bodyPart)
         {
             AgentHitbox ah = __instance;
@@ -262,7 +260,7 @@ namespace ECTD
                     code.Insert(i, new CodeInstruction(OpCodes.Call, overrideMethod));
                     i--;
                 }
-				else if (current.opcode == OpCodes.Ldfld && next.opcode == OpCodes.Box
+                else if (current.opcode == OpCodes.Ldfld && next.opcode == OpCodes.Box
                                                          && (FieldInfo)current.operand == invItemCountField)
                 {
                     code.RemoveRange(i, 2);

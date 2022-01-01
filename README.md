@@ -17,8 +17,7 @@
   </a>
 </div>
 
-# RogueLibs v3 does not support ECTD!
-# You'll have to choose between RLv3 mods and ECTD.
+# ECTD v3.0.0 now works with RogueLibs v3.3.0!
   
 **With ECTD you can:**
 *	Set Strength/Endurance/Accuracy/Speed to any value in range ±2147483647;
@@ -45,12 +44,16 @@
 
 ## Installation ##
 1.	Install BepInEx:
-    1.	[Download the latest version of BepInEx](https://github.com/BepInEx/BepInEx/releases);
+    1.	[Download the latest version of BepInEx](https://github.com/BepInEx/BepInEx/releases/latest);
     2.	Drag all files from the archive into directory /Steam/SteamApps/common/Streets of Rogue/;
     3.	Run the game, so BepInEx can create needed files and directories, and close the game;
-2.	[Download the latest version of ECTD](https://github.com/Abbysssal/ECTD/releases);
-3.  Drag the file "ECTD.dll" from the archive into directory /Steam/SteamApps/common/Streets of Rogue/BepInEx/plugins;
-4.  Done! Now run the game and enjoy!
+2.  Install RogueLibs:
+    1.  [Download the latest version of RogueLibs](https://github.com/Abbysssal/RogueLibs/releases/latest);
+    2.  Drag `RogueLibsCore.dll` into directory /Steam/SteamApps/common/Streets of Rogue/BepInEx/plugins;
+    3.  Drag `RogueLibsPatcher.dll` into directory /Steam/SteamApps/common/Streets of Rogue/BepInEx/patchers;
+3.	[Download the latest version of ECTD](https://github.com/Abbysssal/ECTD/releases/latest);
+4.  Drag the file "ECTD.dll" into directory /Steam/SteamApps/common/Streets of Rogue/BepInEx/plugins;
+5.  Done! Now run the game and enjoy!
 
 ## Deinstallation ##
 1.	Just remove "ECTD.dll" from /Steam/SteamApps/common/Streets of Rogue/BepInEx/plugins.
@@ -81,8 +84,8 @@ See the [guide in Steam](https://steamcommunity.com/sharedfiles/filedetails/?id=
 <br/>Examples: `++Grenade`, `++PlasmaSword`, `++Hypnotizer2`;
 <br/>See [All Item IDs.txt](https://github.com/Abbysssal/ECTD/blob/master/All%20Item%20IDs.txt);
 
-  **Now you can specify item counts! *(v2.7)*:**<br/>
-`++RocketLauncher+Inf`, `++Grenade+Infinity`, `++BananaPeel+Infinite`.
+  **Now you can specify item counts! *(v2.7+)*:**<br/>
+`++RocketLauncher+Infinity`, `++Grenade+45`, `++BananaPeel+19`.
 
 * `--<Item ID>` - removes an item with the specified ID from the custom character;
 <br/>Examples: `--Grenade`, `--PlasmaSword`, `--Hypnotizer2`;
@@ -120,16 +123,11 @@ See the [guide in Steam](https://steamcommunity.com/sharedfiles/filedetails/?id=
 <br/>Examples: `::Skin=Purple`, `::Eyes=RobotSkin`, `::Hair=255|12|86|220`, `::Body=23-62`, `::Legs=255,0,255,127`;
 <br/>See [All Color IDs.txt](https://github.com/Abbysssal/ECTD/blob/master/All%20Color%20IDs.txt);
 
-## Tired of these annoying messages? ***(v2.8)*** ##
+## Tired of these annoying messages? ***(v2.8+)*** ##
 
 Here's how you can remove messages like "[Item 'Fud+50' added]":
 
 Find a file called "ectd-nomessages.cfg" in BepInEx/config and write "true" in it. (if the file doesn't exist, start the game, the file will be created automatically, or create it yourself)
-
-## New Mutators ##
-You can select new mutators at Home Base!
-
-* **[ECTD] No Limit Nuggets** - If enabled, allows you to get more than 99 nuggets. If disabled, does NOT reset the nuggets amount.
 
 ## Characters created using ECTD ##
 When you're publishing your custom characters, you can use this template on Steam Workshop:
@@ -140,74 +138,3 @@ https://github.com/Abbysssal/ECTD/releases[/b]
 ```
 
 https://steamcommunity.com/sharedfiles/filedetails/?id=2098198414
-
-## Changelog ##
-
-#### ECTD v2.5.1 ####
-* Fixed a bug, when custom special abilities and big quests didn't work with imported characters;
-* Fixed "[ECTD] No Limit Nuggets" mutator's position in the Mutator Menu;
-
-#### ECTD v2.5 ####
-* Removed mutators "ECTD-RocketBullets" and "ECTD-GiantExplosions", because [aToM](https://github.com/Abbysssal/aToM) adds similar mutators;
-* Removed mutators "ECTD-OneHitPlayer" and "ECTD-SuperSpeed", because they are very buggy;
-* Added chat commands!;
-* "!help" lists all available commands;
-* "!item \<ItemID\> [Amount]" spawns the item at cursor's position;
-* "!agent \<AgentID\>" or "!npc \<AgentID\>" spawns the agent at cursor's position;
-* Fixed a bug, when ECTD didn't recognize item IDs with '-' and other symbols;
-
-#### ECTD v2.4.1 ####
-* Fixed a bug, when ECTD's mutators replaced original mutators in the Mutator Menu;
-
-#### ECTD v2.4 ####
-* Added new mutator "ECTD-NoLimitNuggets";
-* Added new mutator "ECTD-OneHitPlayer";
-* Added new mutator "ECTD-GiantExplosions";
-* Added new mutator "ECTD-SuperSpeed";
-
-#### ECTD v2.3 ####
-* Ported the mod to BepInEx. Now I don't have to update the mod for every single bugfix;
-* "ECTD-RocketBullets" now works on projectiles, shot by traps;
-* If the item or trait removal command can't find the specified ID, the command won't be executed;
-
-#### ECTD v2.2: ####
-* Added `::<Part>` to get body part's color;
-* Added `::<Part>=<Color>` to set body part's color (+ custom colors);
-
-#### ECTD v2.1.1: ####
-* With "ECTD-RocketBullets" enabled, Shotgun will shoot 3 rockets instead of 1;
-
-#### ECTD v2.1: ####
-* Added mutator "ECTD-RocketBullets" - all projectiles are replaced by rockets;
-
-#### ECTD v2.0: ####
-* Rewrote some of the code;
-* Description commands now will apply changes to the character files. It means that some of the added items or traits will work for other players without the mod too;
-* Removed `+<Item>++<Count>`, because it won't work with the new structure;
-* Replaced `+<Item>` with `++<Item>`;
-* Replaced `*<Trait>` with `**<Trait>`;
-* Replaced `^<Stat>=<Value>` with `^^<Stat>=<Value>`;
-* Added `--<Item>` to remove items;
-* Added `//<Trait>` to remove traits;
-* Added `%%<Ability>` to set special abilities;
-* Added `!!items` to list all added items;
-* Added `!!traits` to list all added traits;
-
-#### ~~ECTD v1.4:~~ ####
-* ~~Now the commands spawn items/agents at the cursor's position;~~
-
-#### ~~ECTD v1.3:~~ ####
-* ~~Ported to uMod Framework (UMF);~~
-* ~~Added console command `/item <ID>`;~~
-* ~~Added console command `/npc <ID>`;~~
-
-#### ECTD v1.2: ####
-* `^<Stat>=<Value>` now works for negative values too;
-
-#### ECTD v1.1: ####
-* Added `+<Item>++<Count>` description command;
-* Added `*<Trait>` description command;
-* Added `^<Stat>=<Value>` description command;
-
-#### ECTD v1.0 (also known as Any Items Mod): ####
-* Added `+<Item>` description command.
