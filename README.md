@@ -1,19 +1,19 @@
 <div align="center">
   <h2>ECTD (Edit Characters Through Description)</h2>
-  <a href="https://github.com/Abbysssal/ECTD/releases/latest">
-    <img src="https://img.shields.io/github/v/release/Abbysssal/ECTD?label=Latest%20release&logo=github&style=for-the-badge" alt="Latest release"/>
+  <a href="https://github.com/SugarBarrel/ECTD/releases/latest">
+    <img src="https://img.shields.io/github/v/release/SugarBarrel/ECTD?label=Latest%20release&logo=github&style=for-the-badge" alt="Latest release"/>
   </a>
-    <a href="https://github.com/Abbysssal/ECTD/releases">
-      <img src="https://img.shields.io/github/v/release/Abbysssal/ECTD?include_prereleases&label=Latest%20pre-release&style=for-the-badge&logo=github" alt="Latest pre-release"/>
+    <a href="https://github.com/SugarBarrel/ECTD/releases">
+      <img src="https://img.shields.io/github/v/release/SugarBarrel/ECTD?include_prereleases&label=Latest%20pre-release&style=for-the-badge&logo=github" alt="Latest pre-release"/>
   <br/>
-  <a href="https://github.com/Abbysssal/ECTD/releases">
-    <img src="https://img.shields.io/github/downloads/Abbysssal/ECTD/total?label=Downloads&style=for-the-badge" alt="Downloads"/>
+  <a href="https://github.com/SugarBarrel/ECTD/releases">
+    <img src="https://img.shields.io/github/downloads/SugarBarrel/ECTD/total?label=Downloads&style=for-the-badge" alt="Downloads"/>
   </a>
-  <a href="https://github.com/Abbysssal/ECTD/subscription">
-    <img src="https://img.shields.io/github/watchers/Abbysssal/ECTD?color=green&label=Watchers&style=for-the-badge" alt="Watchers"/>
+  <a href="https://github.com/SugarBarrel/ECTD/subscription">
+    <img src="https://img.shields.io/github/watchers/SugarBarrel/ECTD?color=green&label=Watchers&style=for-the-badge" alt="Watchers"/>
   </a>
-  <a href="https://github.com/Abbysssal/ECTD/stargazers">
-    <img src="https://img.shields.io/github/stars/Abbysssal/ECTD?color=green&style=for-the-badge" alt="Stars"/>
+  <a href="https://github.com/SugarBarrel/ECTD/stargazers">
+    <img src="https://img.shields.io/github/stars/SugarBarrel/ECTD?color=green&style=for-the-badge" alt="Stars"/>
   </a>
 </div>
 
@@ -28,19 +28,19 @@
 *	Use new mutator, added by this mod;
 
 ## Links ##
-* [Download ECTD](https://github.com/Abbysssal/ECTD/releases)
-* [ECTD on GitHub](https://github.com/Abbysssal/ECTD)
+* [Download ECTD](https://github.com/SugarBarrel/ECTD/releases)
+* [ECTD on GitHub](https://github.com/SugarBarrel/ECTD)
 * [Steam guide](https://steamcommunity.com/sharedfiles/filedetails/?id=2093706214)
 * [Steam collection of characters using ECTD](https://steamcommunity.com/sharedfiles/filedetails/?id=2098198414)
 
 ## Contents ##
-1.	[Installation](https://github.com/Abbysssal/ECTD#installation)
-2.	[Deinstallation](https://github.com/Abbysssal/ECTD#deintallation)
-3.	[How to use ECTD?](https://github.com/Abbysssal/ECTD#how-to-add-itemstraits)
-4.	['Description Commands'](https://github.com/Abbysssal/ECTD#description-commands)
-5.	[New Mutators](https://github.com/Abbysssal/ECTD#new-mutators)
-6.	[Characters created using ECTD](https://github.com/Abbysssal/ECTD#characters-created-using-ectd)
-7.	[Changelog](https://github.com/Abbysssal/ECTD#changelog)
+1.	[Installation](https://github.com/SugarBarrel/ECTD#installation)
+2.	[Deinstallation](https://github.com/SugarBarrel/ECTD#deintallation)
+3.	[How to use ECTD?](https://github.com/SugarBarrel/ECTD#how-to-add-itemstraits)
+4.	['Description Commands'](https://github.com/SugarBarrel/ECTD#description-commands)
+5.	[New Mutators](https://github.com/SugarBarrel/ECTD#new-mutators)
+6.	[Characters created using ECTD](https://github.com/SugarBarrel/ECTD#characters-created-using-ectd)
+7.	[Changelog](https://github.com/SugarBarrel/ECTD#changelog)
 
 ## Installation ##
 1.	Install BepInEx:
@@ -48,10 +48,10 @@
     2.	Drag all files from the archive into directory /Steam/SteamApps/common/Streets of Rogue/;
     3.	Run the game, so BepInEx can create needed files and directories, and close the game;
 2.  Install RogueLibs:
-    1.  [Download the latest version of RogueLibs](https://github.com/Abbysssal/RogueLibs/releases/latest);
+    1.  [Download the latest version of RogueLibs](https://github.com/SugarBarrel/RogueLibs/releases/latest);
     2.  Drag `RogueLibsCore.dll` into directory /Steam/SteamApps/common/Streets of Rogue/BepInEx/plugins;
     3.  Drag `RogueLibsPatcher.dll` into directory /Steam/SteamApps/common/Streets of Rogue/BepInEx/patchers;
-3.	[Download the latest version of ECTD](https://github.com/Abbysssal/ECTD/releases/latest);
+3.	[Download the latest version of ECTD](https://github.com/SugarBarrel/ECTD/releases/latest);
 4.  Drag the file "ECTD.dll" into directory /Steam/SteamApps/common/Streets of Rogue/BepInEx/plugins;
 5.  Done! Now run the game and enjoy!
 
@@ -82,7 +82,7 @@ See the [guide in Steam](https://steamcommunity.com/sharedfiles/filedetails/?id=
 
 * `++<Item ID>` - adds an item with the specified ID to the custom character;
 <br/>Examples: `++Grenade`, `++PlasmaSword`, `++Hypnotizer2`;
-<br/>See [All Item IDs.txt](https://github.com/Abbysssal/ECTD/blob/master/All%20Item%20IDs.txt);
+<br/>See [All Item IDs.txt](https://github.com/SugarBarrel/ECTD/blob/master/All%20Item%20IDs.txt);
 
   **Now you can specify item counts! *(v2.7+)*:**<br/>
 `++RocketLauncher+Infinity`, `++Grenade+45`, `++BananaPeel+19`.
@@ -92,7 +92,7 @@ See the [guide in Steam](https://steamcommunity.com/sharedfiles/filedetails/?id=
 
 * `**<Trait ID>` - adds a trait with the specified ID to the custom character;
 <br/>Examples: `**UpperCrusty`, `**BananaLover2`, `**ReloadWeaponsNewLevel`;
-<br/>See [All Trait IDs.txt](https://github.com/Abbysssal/ECTD/blob/master/All%20Trait%20IDs.txt);
+<br/>See [All Trait IDs.txt](https://github.com/SugarBarrel/ECTD/blob/master/All%20Trait%20IDs.txt);
 
 * `//<Trait ID>` - removes a trait with the specified ID from the custom character;
 <br/>Examples: `//UpperCrusty`, `//BananaLover2`, `//ReloadWeaponsNewLevel`;
@@ -111,7 +111,7 @@ See the [guide in Steam](https://steamcommunity.com/sharedfiles/filedetails/?id=
 
 * `%%<Ability ID>` - sets the custom character's special ability;
 <br/>Examples: `%%Charge`, `%%WerewolfLunge`, `%%MindControl`;
-<br/>See [All Ability IDs.txt](https://github.com/Abbysssal/ECTD/blob/master/All%20Ability%20IDs.txt);
+<br/>See [All Ability IDs.txt](https://github.com/SugarBarrel/ECTD/blob/master/All%20Ability%20IDs.txt);
 
 * `!!items` - lists all item IDs that were added to the custom character;
 
@@ -121,7 +121,7 @@ See the [guide in Steam](https://steamcommunity.com/sharedfiles/filedetails/?id=
 
 * `::Skin|Hair|Legs|Body|Eyes=<Color>` - sets the custom character's skin/hair/legs/body/eyes color to the specified color;
 <br/>Examples: `::Skin=Purple`, `::Eyes=RobotSkin`, `::Hair=255|12|86|220`, `::Body=23-62`, `::Legs=255,0,255,127`;
-<br/>See [All Color IDs.txt](https://github.com/Abbysssal/ECTD/blob/master/All%20Color%20IDs.txt);
+<br/>See [All Color IDs.txt](https://github.com/SugarBarrel/ECTD/blob/master/All%20Color%20IDs.txt);
 
 ## Tired of these annoying messages? ***(v2.8+)*** ##
 
@@ -134,7 +134,7 @@ When you're publishing your custom characters, you can use this template on Stea
 ```
 [b]This character requires ECTD to work!
 You can find the latest release here:
-https://github.com/Abbysssal/ECTD/releases[/b]
+https://github.com/SugarBarrel/ECTD/releases[/b]
 ```
 
 https://steamcommunity.com/sharedfiles/filedetails/?id=2098198414
