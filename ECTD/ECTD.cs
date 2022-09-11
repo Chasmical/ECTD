@@ -19,11 +19,11 @@ namespace ECTD
     {
         public const string GUID = "abbysssal.streetsofrogue.ectd3";
         public const string Name = "ECTD";
-        public const string Version = "3.0.0";
+        public const string Version = "3.0.1";
 
         private const int infinityNumber = 7654321;
         private const string infinityString = "∞";
-        private static string configPath;
+        private static string configPath = null!;
         public static bool NoMessages;
 
         public void Start()
@@ -60,6 +60,7 @@ namespace ECTD
                 NoMessages = File.Exists(configPath);
                 yield return new WaitForSecondsRealtime(5f);
             }
+            // ReSharper disable once IteratorNeverReturns
         }
 
         public static void CharacterCreation_SaveCharacter(CharacterCreation __instance)
@@ -114,19 +115,19 @@ namespace ECTD
                 string txtList = "[" + string.Join(", ", traits.ToArray()) + "]";
                 cc.descriptionChosen = cc.descriptionChosen.Replace(match.Value, txtList);
             }
-            foreach (Match match in Regex.Matches(cc.descriptionChosen, "\\^\\^(Strength|Endurance|Accuracy|Speed|Str|End|Acc|Spd)\\=([0-9-]+)", RegexOptions.ECMAScript))
+            foreach (Match match in Regex.Matches(cc.descriptionChosen, "\\&\\&(Strength|Endurance|Accuracy|Firearms|Speed|Str|End|Acc|Spd)\\=([0-9-]+)", RegexOptions.ECMAScript))
             {
                 string statId = match.Groups[1].Value;
                 if (int.TryParse(match.Groups[2].Value, out int value))
                 {
                     cc.descriptionChosen = cc.descriptionChosen.Replace(match.Value, NoMessages ? string.Empty : $"['{statId}' set to '{value}']");
-                    if (statId == "Strength" || statId == "Str")
+                    if (statId is "Strength" or "Str")
                         cc.strength = value - 1;
-                    else if (statId == "Endurance" || statId == "End")
+                    else if (statId is "Endurance" or "End")
                         cc.endurance = value - 1;
-                    else if (statId == "Accuracy" || statId == "Acc")
+                    else if (statId is "Accuracy" or "Firearms" or "Acc")
                         cc.accuracy = value - 1;
-                    else if (statId == "Speed" || statId == "Spd")
+                    else if (statId is "Speed" or "Spd")
                         cc.speed = value - 1;
                 }
             }
@@ -167,6 +168,7 @@ namespace ECTD
             cc.descriptionChosen = cc.descriptionChosen.Trim();
 
         }
+        // ReSharper disable once IdentifierTypo
         public static bool AgentHitbox_GetColorFromString(AgentHitbox __instance, string colorChoice, string bodyPart)
         {
             AgentHitbox ah = __instance;
@@ -204,9 +206,9 @@ namespace ECTD
             return false;
         }
 
-        private static bool DoTheNumber(ref string itemName, ref int itemCount)
+        private static bool DoTheNumber(ref string? itemName, ref int itemCount)
         {
-            if (itemName == null) return false;
+            if (itemName is null) return false;
             int index = itemName.IndexOf('+');
             if (index != -1)
             {
@@ -219,7 +221,7 @@ namespace ECTD
                     itemCount = infinityNumber;
                     return true;
                 }
-                else if (int.TryParse(numStr, out int count))
+                if (int.TryParse(numStr, out int count))
                 {
                     itemName = itemName.Substring(0, index);
                     itemCount = count;
@@ -234,7 +236,7 @@ namespace ECTD
             if (DoTheNumber(ref __instance.invItemName, ref __instance.invItemCount))
                 __instance.rewardCount = __instance.invItemCount;
         }
-        public static void InvDatabase_AddItemPlayerStart(ref string itemName, ref int itemCount)
+        public static void InvDatabase_AddItemPlayerStart(ref string? itemName, ref int itemCount)
             => DoTheNumber(ref itemName, ref itemCount);
         public static bool InvDatabase_SubtractFromItemCount(InvDatabase __instance, int slotNum)
             => __instance.InvItemList[slotNum].invItemCount != infinityNumber;
