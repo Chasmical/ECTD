@@ -62,10 +62,10 @@
 You need to type 'description commands' in your custom character's description, like so:
 ```
 ++PlasmaSword
-^^Strength=228
+&&Strength=228
 **BananaLover2
 %%WerewolfLunge
-^^Speed=-2
+&&Speed=-2
 ```
 After saving the character, a text will appear in the description, describing the changes that were made:
 ```
@@ -97,17 +97,17 @@ See the [guide in Steam](https://steamcommunity.com/sharedfiles/filedetails/?id=
 * `//<Trait ID>` - removes a trait with the specified ID from the custom character;
 <br/>Examples: `//UpperCrusty`, `//BananaLover2`, `//ReloadWeaponsNewLevel`;
 
-* `^^Strength=<Value>` or `^^Str=<Value>` - sets the custom character's Strength to the specified value;
-<br/>Examples: `^^Strength=11`, `^^Strength=-6`, `^^Str=50`;
+* `&&Strength=<Value>` or `&&Str=<Value>` - sets the custom character's Strength to the specified value;
+<br/>Examples: `&&Strength=11`, `&&Strength=-6`, `&&Str=50`;
 
-* `^^Endurance=<Value>` or `^^End=<Value>` - sets the custom character's Endurance to the specified value;
-<br/>Examples: `^^Endurance=488755541`, `^^Endurance=-2`, `^^End=16`;
+* `&&Endurance=<Value>` or `&&End=<Value>` - sets the custom character's Endurance to the specified value;
+<br/>Examples: `&&Endurance=488755541`, `&&Endurance=-2`, `&&End=16`;
 
-* `^^Accuracy=<Value>` or `^^Acc=<Value>` - sets the custom character's Firearms to the specified value;
-<br/>Examples: `^^Accuracy=1337`, `^^Accuracy=-4`, `^^Acc=228`;
+* `&&Accuracy=<Value>` or `&&Acc=<Value>` - sets the custom character's Firearms to the specified value;
+<br/>Examples: `&&Accuracy=1337`, `&&Accuracy=-4`, `&&Acc=228`;
 
-* `^^Speed=<Value>` or `^^Spd=<Value>` - sets the custom character's Speed to the specified value;
-<br/>Examples: `^^Speed=40`, `^^Speed=-6`, `^^Spd=69`;
+* `&&Speed=<Value>` or `&&Spd=<Value>` - sets the custom character's Speed to the specified value;
+<br/>Examples: `&&Speed=40`, `&&Speed=-6`, `&&Spd=69`;
 
 * `%%<Ability ID>` - sets the custom character's special ability;
 <br/>Examples: `%%Charge`, `%%WerewolfLunge`, `%%MindControl`;
