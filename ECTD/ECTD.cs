@@ -14,7 +14,7 @@ using HarmonyLib;
 namespace ECTD
 {
     [BepInPlugin(GUID, Name, Version)]
-    [BepInDependency(RogueLibs.GUID, RogueLibs.CompiledVersion)]
+    [BepInDependency(RogueLibs.GUID, "3.3.0")]
     public class ECTDPlugin : BaseUnityPlugin
     {
         public const string GUID = "abbysssal.streetsofrogue.ectd3";
