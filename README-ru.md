@@ -1,18 +1,18 @@
 ## ECTD (Edit Characters Through Description) ##
 
 <div align="center">
-  <a href="https://github.com/Abbysssal/ECTD/releases/latest">
-    <img src="https://img.shields.io/github/v/release/Abbysssal/ECTD?label=Latest%20release&logo=github&style=for-the-badge" alt="Последний релиз"/>
+  <a href="https://github.com/SugarBarrel/ECTD/releases/latest">
+    <img src="https://img.shields.io/github/v/release/SugarBarrel/ECTD?label=Latest%20release&logo=github&style=for-the-badge" alt="Последний релиз"/>
   </a>
   <br/>
-  <a href="https://github.com/Abbysssal/ECTD/releases">
-    <img src="https://img.shields.io/github/downloads/Abbysssal/ECTD/total?label=Downloads&style=for-the-badge" alt="Скачивания"/>
+  <a href="https://github.com/SugarBarrel/ECTD/releases">
+    <img src="https://img.shields.io/github/downloads/SugarBarrel/ECTD/total?label=Downloads&style=for-the-badge" alt="Скачивания"/>
   </a>
-  <a href="https://github.com/Abbysssal/ECTD/subscription">
-    <img src="https://img.shields.io/github/watchers/Abbysssal/ECTD?color=green&label=Watchers&style=for-the-badge" alt="Смотрители(?)"/>
+  <a href="https://github.com/SugarBarrel/ECTD/subscription">
+    <img src="https://img.shields.io/github/watchers/SugarBarrel/ECTD?color=green&label=Watchers&style=for-the-badge" alt="Смотрители(?)"/>
   </a>
-  <a href="https://github.com/Abbysssal/ECTD/stargazers">
-    <img src="https://img.shields.io/github/stars/Abbysssal/ECTD?color=green&style=for-the-badge" alt="Звёзды"/>
+  <a href="https://github.com/SugarBarrel/ECTD/stargazers">
+    <img src="https://img.shields.io/github/stars/SugarBarrel/ECTD?color=green&style=for-the-badge" alt="Звёзды"/>
   </a>
 </div>
 
@@ -27,19 +27,19 @@
 *	Ставить новый добавляемый этим модом мутатор;
 
 ## Ссылки ##
-* [Скачать ECTD](https://github.com/Abbysssal/ECTD/releases)
-* [ECTD на GitHub](https://github.com/Abbysssal/ECTD)
+* [Скачать ECTD](https://github.com/SugarBarrel/ECTD/releases)
+* [ECTD на GitHub](https://github.com/SugarBarrel/ECTD)
 * [Руководство в Стиме (англ.)](https://steamcommunity.com/sharedfiles/filedetails/?id=2093706214)
 * [Коллекция персонажей, созданных с ECTD, в Стиме](https://steamcommunity.com/sharedfiles/filedetails/?id=2098198414)
 
 ## Содержание ##
-1.	[Установка](https://github.com/Abbysssal/ECTD/blob/master/README-ru.md#установка)
-2.	[Деинсталляция](https://github.com/Abbysssal/ECTD/blob/master/README-ru.md#деинсталляция)
-3.	[Как пользоваться ECTD?](https://github.com/Abbysssal/ECTD/blob/master/README-ru.md#как-добавлять-предметыособенности)
-4.	[Список команд](https://github.com/Abbysssal/ECTD/blob/master/README-ru.md#список-команд)
-5.	[Новые мутаторы](https://github.com/Abbysssal/ECTD/blob/master/README-ru.md#новые-мутаторы)
-6.	[Персонажи, созданные с ECTD](https://github.com/Abbysssal/ECTD/blob/master/README-ru.md#персонажи-созданные-с-ectd)
-7.	[Список изменений](https://github.com/Abbysssal/ECTD/blob/master/README-ru.md#список-изменений)
+1.	[Установка](https://github.com/SugarBarrel/ECTD/blob/master/README-ru.md#установка)
+2.	[Деинсталляция](https://github.com/SugarBarrel/ECTD/blob/master/README-ru.md#деинсталляция)
+3.	[Как пользоваться ECTD?](https://github.com/SugarBarrel/ECTD/blob/master/README-ru.md#как-добавлять-предметыособенности)
+4.	[Список команд](https://github.com/SugarBarrel/ECTD/blob/master/README-ru.md#список-команд)
+5.	[Новые мутаторы](https://github.com/SugarBarrel/ECTD/blob/master/README-ru.md#новые-мутаторы)
+6.	[Персонажи, созданные с ECTD](https://github.com/SugarBarrel/ECTD/blob/master/README-ru.md#персонажи-созданные-с-ectd)
+7.	[Список изменений](https://github.com/SugarBarrel/ECTD/blob/master/README-ru.md#список-изменений)
 
 ## Установка ##
 1.	Установите BepInEx:
@@ -47,10 +47,10 @@
     2.	Перенесите файлы из архива в папку /Steam/SteamApps/common/Streets of Rogue/;
     3.	Запустите игру, чтобы BepInEx создал нужные файлы и папки, и выйдите из игры;
 2.  Install RogueLibs:
-    1.  [Скачайте свежую версию RogueLibs](https://github.com/Abbysssal/RogueLibs/releases/latest);
+    1.  [Скачайте свежую версию RogueLibs](https://github.com/SugarBarrel/RogueLibs/releases/latest);
     2.  Перенесите `RogueLibsCore.dll` в папку /Steam/SteamApps/common/Streets of Rogue/BepInEx/plugins;
     3.  Перенесите `RogueLibsPatcher.dll` в папку /Steam/SteamApps/common/Streets of Rogue/BepInEx/patchers;
-3.	[Скачайте свежую версию ECTD](https://github.com/Abbysssal/ECTD/releases/latest);
+3.	[Скачайте свежую версию ECTD](https://github.com/SugarBarrel/ECTD/releases/latest);
 4.	Перенесите файл "ECTD.dll" из архива в папку /Steam/SteamApps/common/Streets of Rogue/BepInEx/plugins;
 5.	Готово. Запускайте игру и наслаждайтесь!
 
@@ -81,7 +81,7 @@
 
 * `++<ID предмета>` - добавляет предмет с указанным ID кастомному персонажу;
 <br/>Примеры: `++Grenade`, `++PlasmaSword`, `++Hypnotizer2`;
-<br/>ID предметов смотрите тут - [All Item IDs.txt](https://github.com/Abbysssal/ECTD/blob/master/All%20Item%20IDs.txt);
+<br/>ID предметов смотрите тут - [All Item IDs.txt](https://github.com/SugarBarrel/ECTD/blob/master/All%20Item%20IDs.txt);
 
   **Можно ставить количества! *(v2.7+)*:**<br/>
 `++RocketLauncher+Infinity`, `++Grenade+45`, `++BananaPeel+19`.
@@ -91,7 +91,7 @@
 
 * `**<ID особенности>` - добавляет особенность с указанным ID кастомному персонажу;
 <br/>Примеры: `**UpperCrusty`, `**BananaLover2`, `**ReloadWeaponsNewLevel`;
-<br/>ID особенностей смотрите тут - [All Trait IDs.txt](https://github.com/Abbysssal/ECTD/blob/master/All%20Trait%20IDs.txt);
+<br/>ID особенностей смотрите тут - [All Trait IDs.txt](https://github.com/SugarBarrel/ECTD/blob/master/All%20Trait%20IDs.txt);
 
 * `//<ID особенности>` - убирает особенность с указанным ID у кастомного персонажа;
 <br/>Примеры: `//UpperCrusty`, `//BananaLover2`, `//ReloadWeaponsNewLevel`;
@@ -110,7 +110,7 @@
 
 * `%%<ID способности>` - изменяет специальную способность кастомного персонажа;
 <br/>Примеры: `%%Charge`, `%%WerewolfLunge`, `%%MindControl`;
-<br/>ID способностей смотрите тут - [All Ability IDs.txt](https://github.com/Abbysssal/ECTD/blob/master/All%20Ability%20IDs.txt);
+<br/>ID способностей смотрите тут - [All Ability IDs.txt](https://github.com/SugarBarrel/ECTD/blob/master/All%20Ability%20IDs.txt);
 
 * `!!items` - показывает список ID всех добавленных предметов у кастомного персонажа;
 
@@ -120,7 +120,7 @@
 
 * `::Skin|Hair|Legs|Body|Eyes=<Цвет>` - изменяет цвет кожи/волос/ног/тела/глаз у кастомного персонажа на заданный цвет;
 <br/>Примеры: `::Skin=Purple`, `::Eyes=RobotSkin`, `::Hair=255|12|86|220`, `::Body=23-62`, `::Legs=255,0,255,127`;
-<br/>ID цветов смотрите тут - [All Color IDs.txt](https://github.com/Abbysssal/ECTD/blob/master/All%20Color%20IDs.txt);
+<br/>ID цветов смотрите тут - [All Color IDs.txt](https://github.com/SugarBarrel/ECTD/blob/master/All%20Color%20IDs.txt);
 
 ## Надоели эти надоедливые сообщения? ***(v2.8+)*** ##
 
