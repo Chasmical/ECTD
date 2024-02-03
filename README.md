@@ -1,3 +1,7 @@
+## ⚰️ ECTD has been discontinued ⚰️
+
+The project's repository is archived as part of the GitHub Archive Program. ECTD's code and the documentation will no longer be updated. See more information in the [latest RogueLibs blog post](https://chasmical.github.io/RogueLibs/blog/2024/02/03/discontinuing-roguelibs). Feel free to fork the repository to continue working on the project.
+
 <div align="center">
   <h2>ECTD (Edit Characters Through Description)</h2>
   <a href="https://github.com/SugarBarrel/ECTD/releases/latest">
@@ -17,7 +21,7 @@
   </a>
 </div>
 
-# ECTD v3.0.0 now works with RogueLibs v3.3.0!
+### ECTD v3.0.0 now works with RogueLibs v3.3.0!
   
 **With ECTD you can:**
 *	Set Strength/Endurance/Accuracy/Speed to any value in range ±2147483647;
